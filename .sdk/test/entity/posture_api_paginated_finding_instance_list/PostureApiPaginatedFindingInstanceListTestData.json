@@ -1,0 +1,51 @@
+{
+  "existing": {
+    "posture_api_paginated_finding_instance_list": {
+      "POSTURE_API_PAGINATED_FINDING_INSTANCE_LIST00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_PAGINATED_FINDING_INSTANCE_LIST01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_PAGINATED_FINDING_INSTANCE_LIST02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_paginated_finding_instance_list": {
+      "posture_api_paginated_finding_instance_list_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/data-security/posture/findings/{finding_id}/instances": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

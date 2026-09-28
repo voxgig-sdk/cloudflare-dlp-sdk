@@ -1,0 +1,36 @@
+# BasicDlpPredefinedEntryFlow
+
+main: kit: flow: BasicDlpPredefinedEntryFlow:
+{
+  entity: "dlp_predefined_entry",
+  kind: "basic",
+  name: "BasicDlpPredefinedEntryFlow",
+  step: [
+    {
+      i: {
+        ref: "dlp_predefined_entry_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "dlp_predefined_entry_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "dlp_predefined_entry01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicDlpPredefinedEntryFlow"
+}

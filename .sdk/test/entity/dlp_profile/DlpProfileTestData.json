@@ -1,0 +1,154 @@
+{
+  "existing": {
+    "dlp_profile": {
+      "DLP_PROFILE00": {
+        "ai_context_enabled": true,
+        "allowed_match_count": 141,
+        "confidence_threshold": "s8e",
+        "context_awareness": {},
+        "data_classes": [],
+        "data_tags": [],
+        "description": "s92",
+        "entries": [],
+        "id": "DLP_PROFILE00",
+        "name": "s95",
+        "ocr_enabled": true,
+        "result": "s97",
+        "sensitivity_levels": [],
+        "shared_entries": [],
+        "account_id": "ACCOUNT01",
+        "predefined_id": "PREDEFINED01",
+        "profile_id": "PROFILE01"
+      },
+      "DLP_PROFILE01": {
+        "ai_context_enabled": true,
+        "allowed_match_count": 281,
+        "confidence_threshold": "s11a",
+        "context_awareness": {},
+        "data_classes": [],
+        "data_tags": [],
+        "description": "s11e",
+        "entries": [],
+        "id": "DLP_PROFILE01",
+        "name": "s121",
+        "ocr_enabled": true,
+        "result": "s123",
+        "sensitivity_levels": [],
+        "shared_entries": [],
+        "account_id": "ACCOUNT01",
+        "predefined_id": "PREDEFINED01",
+        "profile_id": "PROFILE01"
+      },
+      "DLP_PROFILE02": {
+        "ai_context_enabled": true,
+        "allowed_match_count": 421,
+        "confidence_threshold": "s1a6",
+        "context_awareness": {},
+        "data_classes": [],
+        "data_tags": [],
+        "description": "s1aa",
+        "entries": [],
+        "id": "DLP_PROFILE02",
+        "name": "s1ad",
+        "ocr_enabled": true,
+        "result": "s1af",
+        "sensitivity_levels": [],
+        "shared_entries": [],
+        "account_id": "ACCOUNT01",
+        "predefined_id": "PREDEFINED01",
+        "profile_id": "PROFILE01"
+      }
+    }
+  },
+  "new": {
+    "dlp_profile": {
+      "dlp_profile_ref01": {
+        "ai_context_enabled": true,
+        "allowed_match_count": 561,
+        "confidence_threshold": "s232",
+        "context_awareness": {},
+        "data_classes": [],
+        "data_tags": [],
+        "description": "s236",
+        "entries": [],
+        "name": "s239",
+        "ocr_enabled": true,
+        "result": "s23b",
+        "sensitivity_levels": [],
+        "shared_entries": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/dlp/profiles/custom": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/dlp/profiles/predefined": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/profiles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/profiles/custom": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/profiles/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/profiles/custom/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/profiles/custom/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/profiles/predefined/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/profiles/custom/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

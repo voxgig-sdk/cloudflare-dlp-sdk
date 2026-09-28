@@ -1,0 +1,45 @@
+# BasicPostureApiExportJobFlow
+
+main: kit: flow: BasicPostureApiExportJobFlow:
+{
+  entity: "posture_api_export_job",
+  kind: "basic",
+  name: "BasicPostureApiExportJobFlow",
+  step: [
+    {
+      i: {
+        ref: "posture_api_export_job_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "posture_api_export_job_ref01",
+        srcdatavar: "posture_api_export_job_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "posture_api_export_job01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-posture_api_export_job_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPostureApiExportJobFlow"
+}

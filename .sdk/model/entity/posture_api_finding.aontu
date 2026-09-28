@@ -1,0 +1,362 @@
+# Entity: posture_api_finding
+
+main: kit: entity: posture_api_finding: {
+
+  alias: field: {}
+
+  fields: {
+    checks: {
+      h: "Checks"
+      n: "checks"
+      r: true
+      sh: "A list of finding IDs to pass along."
+      t: "`$ARRAY`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    new_severity: {
+      h: "New Severity"
+      n: "new_severity"
+      r: true
+      sh: "The numeric severity value to apply to the finding."
+      t: "`$INTEGER`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      sh: "Aggregated finding information with counts and metadata."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "posture_api_finding"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/findings/{finding_id}/reset_finding_severity"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "finding_id"
+                or: "finding_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/reset_finding_severity"
+          q: {
+            exist: [
+              "account_id"
+              "finding_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+            {
+              var: "finding_id"
+            }
+            {
+              lit: "reset_finding_severity"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/findings/{finding_id}/tune_finding_severity"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "finding_id"
+                or: "finding_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/tune_finding_severity"
+          q: {
+            exist: [
+              "account_id"
+              "finding_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+            {
+              var: "finding_id"
+            }
+            {
+              lit: "tune_finding_severity"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/findings/ignore"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/findings/ignore"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+            {
+              lit: "ignore"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/findings/unignore"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/findings/unignore"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+            {
+              lit: "unignore"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/data-security/posture/findings/{finding_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "finding_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/data-security/posture/findings/{finding_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              finding_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

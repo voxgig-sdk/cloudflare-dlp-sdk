@@ -1,0 +1,101 @@
+{
+  "existing": {
+    "dlp_email": {
+      "DLP_EMAIL00": {
+        "action": "s50",
+        "auth_requirements": "s51",
+        "conditions": [],
+        "description": "s53",
+        "enabled": true,
+        "name": "s55",
+        "new_priorities": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "DLP_EMAIL00"
+      },
+      "DLP_EMAIL01": {
+        "action": "sa0",
+        "auth_requirements": "sa1",
+        "conditions": [],
+        "description": "sa3",
+        "enabled": true,
+        "name": "sa5",
+        "new_priorities": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "DLP_EMAIL01"
+      },
+      "DLP_EMAIL02": {
+        "action": "sf0",
+        "auth_requirements": "sf1",
+        "conditions": [],
+        "description": "sf3",
+        "enabled": true,
+        "name": "sf5",
+        "new_priorities": {},
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "rule_id": "RULE01",
+        "id": "DLP_EMAIL02"
+      }
+    }
+  },
+  "new": {
+    "dlp_email": {
+      "dlp_email_ref01": {
+        "action": "s140",
+        "auth_requirements": "s141",
+        "conditions": [],
+        "description": "s143",
+        "enabled": true,
+        "name": "s145",
+        "new_priorities": {},
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/email/account_mapping": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/dlp/email/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/email/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/email/rules/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/email/account_mapping": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/dlp/email/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/email/rules/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/email/rules/{rule_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

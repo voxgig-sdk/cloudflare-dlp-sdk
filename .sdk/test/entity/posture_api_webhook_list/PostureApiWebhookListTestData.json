@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "posture_api_webhook_list": {
+      "POSTURE_API_WEBHOOK_LIST00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_WEBHOOK_LIST01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_WEBHOOK_LIST02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_webhook_list": {
+      "posture_api_webhook_list_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/data-security/posture/webhooks": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

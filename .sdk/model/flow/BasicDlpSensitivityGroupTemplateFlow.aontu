@@ -1,0 +1,49 @@
+# BasicDlpSensitivityGroupTemplateFlow
+
+main: kit: flow: BasicDlpSensitivityGroupTemplateFlow:
+{
+  entity: "dlp_sensitivity_group_template",
+  kind: "basic",
+  name: "BasicDlpSensitivityGroupTemplateFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "dlp_sensitivity_group_template_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "dlp_sensitivity_group_template_ref01",
+        srcdatavar: "dlp_sensitivity_group_template_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "dlp_sensitivity_group_template01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-dlp_sensitivity_group_template_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDlpSensitivityGroupTemplateFlow"
+}

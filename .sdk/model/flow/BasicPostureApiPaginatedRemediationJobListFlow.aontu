@@ -1,0 +1,26 @@
+# BasicPostureApiPaginatedRemediationJobListFlow
+
+main: kit: flow: BasicPostureApiPaginatedRemediationJobListFlow:
+{
+  entity: "posture_api_paginated_remediation_job_list",
+  kind: "basic",
+  name: "BasicPostureApiPaginatedRemediationJobListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "posture_api_paginated_remediation_job_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPostureApiPaginatedRemediationJobListFlow"
+}

@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DlpProfile | Cloudflare DLP</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare DLP<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-dlp-sdk">voxgig-sdk/cloudflare-dlp-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare DLP</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/dlp_custom_prompt_topic.html">DlpCustomPromptTopic</a>
+<a href="../api/dlp_data_class.html">DlpDataClass</a>
+<a href="../api/dlp_data_tag.html">DlpDataTag</a>
+<a href="../api/dlp_data_tag_category.html">DlpDataTagCategory</a>
+<a href="../api/dlp_data_tag_category_template.html">DlpDataTagCategoryTemplate</a>
+<a href="../api/dlp_dataset.html">DlpDataset</a>
+<a href="../api/dlp_document_fingerprint.html">DlpDocumentFingerprint</a>
+<a href="../api/dlp_email.html">DlpEmail</a>
+<a href="../api/dlp_entry.html">DlpEntry</a>
+<a href="../api/dlp_integration_entry.html">DlpIntegrationEntry</a>
+<a href="../api/dlp_predefined_entry.html">DlpPredefinedEntry</a>
+<a aria-current="page" href="../api/dlp_profile.html">DlpProfile</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_iddlpprofilespredefinedprofile_idconfig">POST /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</a>
+<a class="nav-section" href="#post-accountsaccount_iddlpprofilescustom">POST /accounts/{account_id}/dlp/profiles/custom</a>
+<a class="nav-section" href="#post-accountsaccount_iddlpprofilespredefined">POST /accounts/{account_id}/dlp/profiles/predefined</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpprofiles">GET /accounts/{account_id}/dlp/profiles</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpprofilescustom">GET /accounts/{account_id}/dlp/profiles/custom</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpprofilesprofile_id">GET /accounts/{account_id}/dlp/profiles/{profile_id}</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpprofilespredefinedprofile_idconfig">GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpprofilescustomprofile_id">GET /accounts/{account_id}/dlp/profiles/custom/{profile_id}</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpprofilespredefinedprofile_id">GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_iddlpprofilescustomprofile_id">DELETE /accounts/{account_id}/dlp/profiles/custom/{profile_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_iddlpprofilespredefinedprofile_id">DELETE /accounts/{account_id}/dlp/profiles/predefined/{profile_id}</a>
+<a class="nav-section" href="#put-accountsaccount_iddlpprofilespredefinedprofile_idconfig">PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</a>
+<a class="nav-section" href="#put-accountsaccount_iddlpprofilescustomprofile_id">PUT /accounts/{account_id}/dlp/profiles/custom/{profile_id}</a>
+<a class="nav-section" href="#put-accountsaccount_iddlpprofilespredefinedprofile_id">PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}</a></div>
+<a href="../api/dlp_sensitivity_group.html">DlpSensitivityGroup</a>
+<a href="../api/dlp_sensitivity_group_template.html">DlpSensitivityGroupTemplate</a>
+<a href="../api/dlp_sensitivity_level.html">DlpSensitivityLevel</a>
+<a href="../api/dlp_setting.html">DlpSetting</a>
+<a href="../api/policy.html">Policy</a>
+<a href="../api/posture_api_create_remediation_job.html">PostureApiCreateRemediationJob</a>
+<a href="../api/posture_api_create_webhook_job.html">PostureApiCreateWebhookJob</a>
+<a href="../api/posture_api_export_job.html">PostureApiExportJob</a>
+<a href="../api/posture_api_finding.html">PostureApiFinding</a>
+<a href="../api/posture_api_finding_instance.html">PostureApiFindingInstance</a>
+<a href="../api/posture_api_finding_type.html">PostureApiFindingType</a>
+<a href="../api/posture_api_paginated_content_asset_list.html">PostureApiPaginatedContentAssetList</a>
+<a href="../api/posture_api_paginated_export_job_list.html">PostureApiPaginatedExportJobList</a>
+<a href="../api/posture_api_paginated_finding_instance_list.html">PostureApiPaginatedFindingInstanceList</a>
+<a href="../api/posture_api_paginated_finding_list.html">PostureApiPaginatedFindingList</a>
+<a href="../api/posture_api_paginated_finding_type_list.html">PostureApiPaginatedFindingTypeList</a>
+<a href="../api/posture_api_paginated_remediation_job_list.html">PostureApiPaginatedRemediationJobList</a>
+<a href="../api/posture_api_paginated_remediation_type_list.html">PostureApiPaginatedRemediationTypeList</a>
+<a href="../api/posture_api_webhook.html">PostureApiWebhook</a>
+<a href="../api/posture_api_webhook_list.html">PostureApiWebhookList</a>
+<a href="../api/webhook.html">Webhook</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="dlpprofile">DlpProfile</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddlpprofilespredefinedprofile_idconfig"><code>/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</code></a></td>
+<td><code>create</code></td>
+<td>Create predefined profile response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddlpprofilescustom"><code>/accounts/{account_id}/dlp/profiles/custom</code></a></td>
+<td><code>create</code></td>
+<td>New custom profile response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddlpprofilespredefined"><code>/accounts/{account_id}/dlp/profiles/predefined</code></a></td>
+<td><code>create</code></td>
+<td>Create predefined profile response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpprofiles"><code>/accounts/{account_id}/dlp/profiles</code></a></td>
+<td><code>list</code></td>
+<td>List all profiles response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpprofilescustom"><code>/accounts/{account_id}/dlp/profiles/custom</code></a></td>
+<td><code>list</code></td>
+<td>List all custom profiles response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpprofilesprofile_id"><code>/accounts/{account_id}/dlp/profiles/{profile_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get profile response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpprofilespredefinedprofile_idconfig"><code>/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</code></a></td>
+<td><code>load</code></td>
+<td>Predefined profile response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpprofilescustomprofile_id"><code>/accounts/{account_id}/dlp/profiles/custom/{profile_id}</code></a></td>
+<td><code>load</code></td>
+<td>Custom profile response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpprofilespredefinedprofile_id"><code>/accounts/{account_id}/dlp/profiles/predefined/{profile_id}</code></a></td>
+<td><code>load</code></td>
+<td>Predefined profile response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddlpprofilescustomprofile_id"><code>/accounts/{account_id}/dlp/profiles/custom/{profile_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Delete custom profile response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddlpprofilespredefinedprofile_id"><code>/accounts/{account_id}/dlp/profiles/predefined/{profile_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Delete predefined profile response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_iddlpprofilespredefinedprofile_idconfig"><code>/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</code></a></td>
+<td><code>update</code></td>
+<td>Update predefined profile response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_iddlpprofilescustomprofile_id"><code>/accounts/{account_id}/dlp/profiles/custom/{profile_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update custom profile response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_iddlpprofilespredefinedprofile_id"><code>/accounts/{account_id}/dlp/profiles/predefined/{profile_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update predefined profile response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">dlp_profiles, err := client.DlpProfile(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dlp_profiles)
+dlp_profile, err := client.DlpProfile(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dlp_profile)
+created, err := client.DlpProfile(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;context_awareness&quot;: map[string]any{}, &quot;name&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.DlpProfile(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;profile_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.DlpProfile(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;profile_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local dlp_profiles, err = client:DlpProfile():list({ account_id = &quot;example&quot; })
+local dlp_profile, err = client:DlpProfile():load({ account_id = &quot;example&quot; })
+local created, err = client:DlpProfile():create({ account_id = &quot;example&quot;, context_awareness = {}, name = &quot;example&quot; })
+local updated, err = client:DlpProfile():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, profile_id = &quot;example&quot; })
+local removed, err = client:DlpProfile():remove({ account_id = &quot;example&quot;, profile_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$dlp_profiles = $client-&gt;DlpProfile()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$dlp_profile = $client-&gt;DlpProfile()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;DlpProfile()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;context_awareness&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;DlpProfile()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;profile_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;DlpProfile()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;profile_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">dlp_profiles = client.DlpProfile().list({&quot;account_id&quot;: &quot;example&quot;})
+dlp_profile = client.DlpProfile().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.DlpProfile().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;context_awareness&quot;: {}, &quot;name&quot;: &quot;example&quot; })
+updated = client.DlpProfile().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;profile_id&quot;: &quot;example&quot;})
+client.DlpProfile().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;profile_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">dlp_profiles = client.DlpProfile.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+dlp_profile = client.DlpProfile.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.DlpProfile.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;context_awareness&quot; =&gt; {}, &quot;name&quot; =&gt; &quot;example&quot; })
+updated = client.DlpProfile.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;profile_id&quot; =&gt; &quot;example&quot; })
+client.DlpProfile.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;profile_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const dlp_profiles = await client.DlpProfile().list({ account_id: &quot;example&quot; })
+const dlp_profile = await client.DlpProfile().load({ account_id: &quot;example&quot; })
+const created = await client.DlpProfile().create({ account_id: &quot;example&quot;, context_awareness: {}, name: &quot;example&quot; })
+const updated = await client.DlpProfile().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, profile_id: &quot;example&quot; })
+await client.DlpProfile().remove({ account_id: &quot;example&quot;, profile_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Ai Context Enabled</td>
+</tr>
+<tr>
+<td><code>allowed_match_count</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Related DLP policies will trigger when the match count exceeds the number set.</td>
+</tr>
+<tr>
+<td><code>confidence_threshold</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Confidence Threshold</td>
+</tr>
+<tr>
+<td><code>context_awareness</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Scan the context of predefined entries to only return matches surrounded by keywords.</td>
+</tr>
+<tr>
+<td><code>data_classes</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Data class IDs to associate with the profile.</td>
+</tr>
+<tr>
+<td><code>data_tags</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Data tag IDs to associate with the profile.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The description of the profile.</td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Custom entries from this profile.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>ocr_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Ocr Enabled</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>any</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>sensitivity_levels</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Sensitivity levels to associate with the profile.</td>
+</tr>
+<tr>
+<td><code>shared_entries</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Entries from other profiles (for example</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_iddlpprofilespredefinedprofile_idconfig" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</h3>
+<p>Operation ID: <code>dlp-profiles-create-predefined-profile-config</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>allowed_match_count</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>confidence_threshold</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled_entries</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ocr_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-create-predefined-profile-response" class="status" data-status="2xx">200: Create predefined profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-predefined-profile-failure-response">4XX: Create predefined profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_iddlpprofilescustom" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/dlp/profiles/custom</h3>
+<p>Operation ID: <code>dlp-profiles-create-custom-profiles</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>allowed_match_count</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td>Related DLP policies will trigger when the match count exceeds the number set.</td>
+</tr>
+<tr>
+<td><code>confidence_threshold</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>context_awareness</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Scan the context of predefined entries to only return matches surrounded by keywords.</td>
+</tr>
+<tr>
+<td><code>context_awareness.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If true, scan the context of predefined entries to only return matches surrounded by keywords.</td>
+</tr>
+<tr>
+<td><code>context_awareness.skip</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Content types to exclude from context analysis and return all matches.</td>
+</tr>
+<tr>
+<td><code>context_awareness.skip.files</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If the content type is a file, skip context analysis and return all matches.</td>
+</tr>
+<tr>
+<td><code>data_classes</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Data class IDs to associate with the profile.</td>
+</tr>
+<tr>
+<td><code>data_tags</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Data tag IDs to associate with the profile.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The description of the profile.</td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>array of object or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ocr_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sensitivity_levels</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Sensitivity levels to associate with the profile.</td>
+</tr>
+<tr>
+<td><code>sensitivity_levels[].group_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sensitivity_levels[].level_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shared_entries</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Entries from other profiles (for example pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).</td>
+</tr>
+<tr>
+<td><code>shared_entries[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shared_entries[].entry_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-new-custom-profile-response" class="status" data-status="2xx">200: New custom profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-new-custom-profile-failure-response">4XX: New custom profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_iddlpprofilespredefined" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/dlp/profiles/predefined</h3>
+<p>Operation ID: <code>dlp-profiles-create-predefined-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<p>The request body is <code>object and object</code>.</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-create-predefined-profile-response-1" class="status" data-status="2xx">200: Create predefined profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-predefined-profile-failure-response-1">4XX: Create predefined profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_iddlpprofiles" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/profiles</h3>
+<p>Operation ID: <code>dlp-profiles-list-all-profiles</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>all</code> | <code>query</code> | <code>boolean</code> | No | Return all profiles, including those that current account does not have access to. |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-list-all-profiles-response" class="status" data-status="2xx">200: List all profiles response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-all-profiles-failure-response">4XX: List all profiles failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddlpprofilescustom" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/profiles/custom</h3>
+<p>Operation ID: <code>dlp-profiles-list-all-custom-profiles</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-list-all-custom-profiles-response" class="status" data-status="2xx">200: List all custom profiles response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-all-profiles-failure-response-1">4XX: List all profiles failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddlpprofilesprofile_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/profiles/{profile_id}</h3>
+<p>Operation ID: <code>dlp-profiles-get-dlp-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-get-profile-response" class="status" data-status="2xx">200: Get profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-profile-failure-response">4XX: Get profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddlpprofilespredefinedprofile_idconfig" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</h3>
+<p>Operation ID: <code>dlp-profiles-get-predefined-profile-config</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-predefined-profile-response" class="status" data-status="2xx">200: Predefined profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-predefined-profile-failure-response">4XX: Predefined profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddlpprofilescustomprofile_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/profiles/custom/{profile_id}</h3>
+<p>Operation ID: <code>dlp-profiles-get-custom-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-custom-profile-response" class="status" data-status="2xx">200: Custom profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-custom-profile-failure-response">4XX: Custom profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddlpprofilespredefinedprofile_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/profiles/predefined/{profile_id}</h3>
+<p>Operation ID: <code>dlp-profiles-get-predefined-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-predefined-profile-response-1" class="status" data-status="2xx">200: Predefined profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-predefined-profile-failure-response-1">4XX: Predefined profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_iddlpprofilescustomprofile_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/dlp/profiles/custom/{profile_id}</h3>
+<p>Operation ID: <code>dlp-profiles-delete-custom-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-delete-custom-profile-response" class="status" data-status="2xx">200: Delete custom profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-delete-custom-profile-failure-response">4XX: Delete custom profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_iddlpprofilespredefinedprofile_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/dlp/profiles/predefined/{profile_id}</h3>
+<p>Operation ID: <code>dlp-profiles-delete-predefined-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-delete-predefined-profile-response" class="status" data-status="2xx">200: Delete predefined profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-delete-predefined-profile-failure-response">4XX: Delete predefined profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_iddlpprofilespredefinedprofile_idconfig" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config</h3>
+<p>Operation ID: <code>dlp-profiles-update-predefined-profile-config</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-11">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>allowed_match_count</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>confidence_threshold</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled_entries</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ocr_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-11">Responses</h4>
+<h5 id="200-update-predefined-profile-response" class="status" data-status="2xx">200: Update predefined profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-predefined-profile-failure-response">4XX: Update predefined profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="put-accountsaccount_iddlpprofilescustomprofile_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/dlp/profiles/custom/{profile_id}</h3>
+<p>Operation ID: <code>dlp-profiles-update-custom-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-12">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>allowed_match_count</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>confidence_threshold</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>context_awareness</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Scan the context of predefined entries to only return matches surrounded by keywords.</td>
+</tr>
+<tr>
+<td><code>context_awareness.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If true, scan the context of predefined entries to only return matches surrounded by keywords.</td>
+</tr>
+<tr>
+<td><code>context_awareness.skip</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Content types to exclude from context analysis and return all matches.</td>
+</tr>
+<tr>
+<td><code>context_awareness.skip.files</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If the content type is a file, skip context analysis and return all matches.</td>
+</tr>
+<tr>
+<td><code>data_classes</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Data class IDs to associate with the profile. If omitted, existing associations are unchanged.</td>
+</tr>
+<tr>
+<td><code>data_tags</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Data tag IDs to associate with the profile. If omitted, existing associations are unchanged.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The description of the profile.</td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>array of object and object or object</code></td>
+<td>No</td>
+<td>Custom entries from this profile. If this field is omitted, entries owned by this profile will not be changed.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ocr_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sensitivity_levels</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Sensitivity levels to associate with the profile. If omitted, existing associations are unchanged.</td>
+</tr>
+<tr>
+<td><code>sensitivity_levels[].group_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sensitivity_levels[].level_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shared_entries</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Other entries, for example predefined or integration.</td>
+</tr>
+<tr>
+<td><code>shared_entries[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shared_entries[].entry_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-12">Responses</h4>
+<h5 id="200-update-custom-profile-response" class="status" data-status="2xx">200: Update custom profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-custom-profile-failure-response">4XX: Update custom profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="put-accountsaccount_iddlpprofilespredefinedprofile_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/dlp/profiles/predefined/{profile_id}</h3>
+<p>Operation ID: <code>dlp-profiles-update-predefined-profile</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-13">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>profile_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-5">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>allowed_match_count</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>confidence_threshold</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>context_awareness</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Scan the context of predefined entries to only return matches surrounded by keywords.</td>
+</tr>
+<tr>
+<td><code>context_awareness.enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If true, scan the context of predefined entries to only return matches surrounded by keywords.</td>
+</tr>
+<tr>
+<td><code>context_awareness.skip</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Content types to exclude from context analysis and return all matches.</td>
+</tr>
+<tr>
+<td><code>context_awareness.skip.files</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If the content type is a file, skip context analysis and return all matches.</td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries[].enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entries[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ocr_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-13">Responses</h4>
+<h5 id="200-update-predefined-profile-response-1" class="status" data-status="2xx">200: Update predefined profile response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-predefined-profile-failure-response-1">4XX: Update predefined profile failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

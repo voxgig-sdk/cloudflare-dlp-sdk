@@ -1,0 +1,104 @@
+{
+  "existing": {
+    "policy": {
+      "POLICY00": {
+        "actions": {},
+        "applies_to_all_integrations": false,
+        "description": "s84",
+        "display_name": "s85",
+        "enabled": true,
+        "errors": [],
+        "finding_type_id": "FINDING_TYPE01",
+        "id": "POLICY00",
+        "integration_ids": [],
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "POLICY01": {
+        "actions": {},
+        "applies_to_all_integrations": false,
+        "description": "s106",
+        "display_name": "s107",
+        "enabled": true,
+        "errors": [],
+        "finding_type_id": "FINDING_TYPE01",
+        "id": "POLICY01",
+        "integration_ids": [],
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "POLICY02": {
+        "actions": {},
+        "applies_to_all_integrations": false,
+        "description": "s188",
+        "display_name": "s189",
+        "enabled": true,
+        "errors": [],
+        "finding_type_id": "FINDING_TYPE01",
+        "id": "POLICY02",
+        "integration_ids": [],
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "policy": {
+      "policy_ref01": {
+        "actions": {},
+        "applies_to_all_integrations": false,
+        "description": "s20a",
+        "display_name": "s20b",
+        "enabled": true,
+        "errors": [],
+        "finding_type_id": "FINDING_TYPE01",
+        "integration_ids": [],
+        "messages": [],
+        "result": {},
+        "result_info": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/policies": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/data-security/posture/policies/logs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/data-security/posture/policies": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/data-security/posture/policies/{policy_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/data-security/posture/policies/{policy_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/data-security/posture/policies/{policy_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

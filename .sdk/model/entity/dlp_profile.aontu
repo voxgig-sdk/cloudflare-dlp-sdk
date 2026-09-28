@@ -1,0 +1,941 @@
+# Entity: dlp_profile
+
+main: kit: entity: dlp_profile: {
+
+  alias: field: {}
+
+  fields: {
+    ai_context_enabled: {
+      h: "Ai Context Enabled"
+      n: "ai_context_enabled"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    allowed_match_count: {
+      fo: "int32"
+      h: "Allowed Match Count"
+      n: "allowed_match_count"
+      r: false
+      sh: "Related DLP policies will trigger when the match count exceeds the number set."
+      t: "`$INTEGER`"
+    }
+    confidence_threshold: {
+      h: "Confidence Threshold"
+      n: "confidence_threshold"
+      r: false
+      t: "`$STRING`"
+    }
+    context_awareness: {
+      de: true
+      h: "Context Awareness"
+      n: "context_awareness"
+      r: true
+      sh: "Scan the context of predefined entries to only return matches surrounded by keywords."
+      t: "`$OBJECT`"
+    }
+    data_classes: {
+      h: "Data Classes"
+      n: "data_classes"
+      r: false
+      sh: "Data class IDs to associate with the profile."
+      t: "`$ARRAY`"
+    }
+    data_tags: {
+      h: "Data Tags"
+      n: "data_tags"
+      r: false
+      sh: "Data tag IDs to associate with the profile."
+      t: "`$ARRAY`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "The description of the profile."
+      t: "`$STRING`"
+    }
+    entries: {
+      de: true
+      h: "Entries"
+      n: "entries"
+      r: false
+      sh: "Custom entries from this profile."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    ocr_enabled: {
+      h: "Ocr Enabled"
+      n: "ocr_enabled"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      t: "`$ANY`"
+      union: {
+        branches: 7
+        count: 11
+        depth: 15
+      }
+    }
+    sensitivity_levels: {
+      h: "Sensitivity Levels"
+      n: "sensitivity_levels"
+      r: false
+      sh: "Sensitivity levels to associate with the profile."
+      t: "`$ARRAY`"
+    }
+    shared_entries: {
+      h: "Shared Entries"
+      n: "shared_entries"
+      r: false
+      sh: "Entries from other profiles (e.g."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "dlp_profile"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "predefined_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config"
+          q: {
+            "$action": "config"
+            exist: [
+              "account_id"
+              "predefined_id"
+            ]
+          }
+          r: {
+            param: {
+              profile_id: "predefined_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "predefined"
+            }
+            {
+              var: "predefined_id"
+            }
+            {
+              lit: "config"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/dlp/profiles/custom"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/dlp/profiles/custom"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "custom"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/dlp/profiles/predefined"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/dlp/profiles/predefined"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "predefined"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/profiles"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "all"
+                or: "all"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/profiles"
+          q: {
+            exist: [
+              "account_id"
+              "all"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/profiles/custom"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/profiles/custom"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "custom"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/profiles/{profile_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/profiles/{profile_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              profile_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "predefined_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config"
+          q: {
+            "$action": "config"
+            exist: [
+              "account_id"
+              "predefined_id"
+            ]
+          }
+          r: {
+            param: {
+              profile_id: "predefined_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "predefined"
+            }
+            {
+              var: "predefined_id"
+            }
+            {
+              lit: "config"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/profiles/custom/{profile_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "profile_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/profiles/custom/{profile_id}"
+          q: {
+            exist: [
+              "account_id"
+              "profile_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "custom"
+            }
+            {
+              var: "profile_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "profile_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}"
+          q: {
+            exist: [
+              "account_id"
+              "profile_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "predefined"
+            }
+            {
+              var: "profile_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/dlp/profiles/custom/{profile_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "profile_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/dlp/profiles/custom/{profile_id}"
+          q: {
+            exist: [
+              "account_id"
+              "profile_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "custom"
+            }
+            {
+              var: "profile_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/dlp/profiles/predefined/{profile_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "profile_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}"
+          q: {
+            exist: [
+              "account_id"
+              "profile_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "predefined"
+            }
+            {
+              var: "profile_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "predefined_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config"
+          q: {
+            "$action": "config"
+            exist: [
+              "account_id"
+              "predefined_id"
+            ]
+          }
+          r: {
+            param: {
+              profile_id: "predefined_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "predefined"
+            }
+            {
+              var: "predefined_id"
+            }
+            {
+              lit: "config"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/dlp/profiles/custom/{profile_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "profile_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/dlp/profiles/custom/{profile_id}"
+          q: {
+            exist: [
+              "account_id"
+              "profile_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "custom"
+            }
+            {
+              var: "profile_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "profile_id"
+                or: "profile_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}"
+          q: {
+            exist: [
+              "account_id"
+              "profile_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "profiles"
+            }
+            {
+              lit: "predefined"
+            }
+            {
+              var: "profile_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

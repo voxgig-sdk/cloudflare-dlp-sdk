@@ -1,0 +1,27 @@
+# BasicPostureApiPaginatedFindingInstanceListFlow
+
+main: kit: flow: BasicPostureApiPaginatedFindingInstanceListFlow:
+{
+  entity: "posture_api_paginated_finding_instance_list",
+  kind: "basic",
+  name: "BasicPostureApiPaginatedFindingInstanceListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        finding_id: "finding01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "posture_api_paginated_finding_instance_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPostureApiPaginatedFindingInstanceListFlow"
+}

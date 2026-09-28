@@ -1,0 +1,107 @@
+{
+  "existing": {
+    "dlp_dataset": {
+      "DLP_DATASET00": {
+        "case_sensitive": true,
+        "description": "s47",
+        "encoding_version": 72,
+        "id": "DLP_DATASET00",
+        "name": "s4a",
+        "result": {},
+        "secret": true,
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "entry_id": "ENTRY01",
+        "version_id": "VERSION01",
+        "version": "VERSION01"
+      },
+      "DLP_DATASET01": {
+        "case_sensitive": true,
+        "description": "s8d",
+        "encoding_version": 142,
+        "id": "DLP_DATASET01",
+        "name": "s90",
+        "result": {},
+        "secret": true,
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "entry_id": "ENTRY01",
+        "version_id": "VERSION01",
+        "version": "VERSION01"
+      },
+      "DLP_DATASET02": {
+        "case_sensitive": true,
+        "description": "sd3",
+        "encoding_version": 212,
+        "id": "DLP_DATASET02",
+        "name": "sd6",
+        "result": {},
+        "secret": true,
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "entry_id": "ENTRY01",
+        "version_id": "VERSION01",
+        "version": "VERSION01"
+      }
+    }
+  },
+  "new": {
+    "dlp_dataset": {
+      "dlp_dataset_ref01": {
+        "case_sensitive": true,
+        "description": "s119",
+        "encoding_version": 282,
+        "name": "s11c",
+        "result": {},
+        "secret": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}/entries/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/dlp/datasets/{dataset_id}/upload/{version}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/dlp/datasets/{dataset_id}/upload": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/dlp/datasets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/datasets": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/datasets/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/datasets/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/datasets/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

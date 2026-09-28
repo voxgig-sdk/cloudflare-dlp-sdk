@@ -1,0 +1,88 @@
+{
+  "existing": {
+    "dlp_entry": {
+      "DLP_ENTRY00": {
+        "description": "s46",
+        "enabled": false,
+        "id": "DLP_ENTRY00",
+        "name": "s49",
+        "pattern": {},
+        "profile_id": "PROFILE01",
+        "result": "s4c",
+        "account_id": "ACCOUNT01",
+        "entry_id": "ENTRY01"
+      },
+      "DLP_ENTRY01": {
+        "description": "s8c",
+        "enabled": false,
+        "id": "DLP_ENTRY01",
+        "name": "s8f",
+        "pattern": {},
+        "profile_id": "PROFILE01",
+        "result": "s92",
+        "account_id": "ACCOUNT01",
+        "entry_id": "ENTRY01"
+      },
+      "DLP_ENTRY02": {
+        "description": "sd2",
+        "enabled": false,
+        "id": "DLP_ENTRY02",
+        "name": "sd5",
+        "pattern": {},
+        "profile_id": "PROFILE01",
+        "result": "sd8",
+        "account_id": "ACCOUNT01",
+        "entry_id": "ENTRY01"
+      }
+    }
+  },
+  "new": {
+    "dlp_entry": {
+      "dlp_entry_ref01": {
+        "description": "s118",
+        "enabled": false,
+        "name": "s11b",
+        "pattern": {},
+        "profile_id": "PROFILE01",
+        "result": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/entries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/entries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/entries/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/entries/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/entries/custom/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/entries/predefined/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/entries/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

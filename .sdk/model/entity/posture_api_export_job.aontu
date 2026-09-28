@@ -1,0 +1,458 @@
+# Entity: posture_api_export_job
+
+main: kit: entity: posture_api_export_job: {
+
+  alias: field: {}
+
+  fields: {
+    archived: {
+      h: "Archived"
+      n: "archived"
+      r: false
+      sh: "Filter for archived status."
+      t: "`$BOOLEAN`"
+    }
+    dlp_profile_id: {
+      h: "Dlp Profile Id"
+      n: "dlp_profile_id"
+      r: false
+      sh: "Filter by DLP profile IDs."
+      t: "`$ARRAY`"
+    }
+    dlp_profile_information: {
+      h: "Dlp Profile Information"
+      n: "dlp_profile_information"
+      r: true
+      sh: "DLP profile metadata for the export."
+      t: "`$ARRAY`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    ignored: {
+      h: "Ignored"
+      n: "ignored"
+      r: false
+      sh: "Filter for only the ignored findings."
+      t: "`$BOOLEAN`"
+    }
+    integration_id: {
+      h: "Integration Id"
+      n: "integration_id"
+      r: false
+      sh: "Filter by integration IDs."
+      t: "`$ARRAY`"
+    }
+    max_affliction_date: {
+      fo: "date-time"
+      h: "Max Affliction Date"
+      n: "max_affliction_date"
+      r: false
+      sh: "Filter to view findings that occurred on or before the affliction date."
+      t: "`$STRING`"
+    }
+    max_updated_at: {
+      fo: "date-time"
+      h: "Max Updated At"
+      n: "max_updated_at"
+      r: false
+      sh: "Filter to view remediation jobs updated on or before this datetime."
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    min_affliction_date: {
+      fo: "date-time"
+      h: "Min Affliction Date"
+      n: "min_affliction_date"
+      r: false
+      sh: "Filter to view findings that occurred on or after the affliction date."
+      t: "`$STRING`"
+    }
+    min_updated_at: {
+      fo: "date-time"
+      h: "Min Updated At"
+      n: "min_updated_at"
+      r: false
+      sh: "Filter to view remediation jobs updated on or after this datetime."
+      t: "`$STRING`"
+    }
+    orders: {
+      h: "Orders"
+      n: "orders"
+      r: false
+      sh: "Ordering specifications for the export."
+      t: "`$ARRAY`"
+    }
+    product: {
+      h: "Product"
+      n: "product"
+      r: false
+      sh: "Filter by finding's category product."
+      t: "`$STRING`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      sh: "Information about an export job."
+      t: "`$OBJECT`"
+    }
+    search: {
+      h: "Search"
+      n: "search"
+      r: false
+      sh: "A search term."
+      t: "`$STRING`"
+    }
+    severities: {
+      h: "Severities"
+      n: "severities"
+      r: false
+      sh: "Filter by severity levels."
+      t: "`$ARRAY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Filter by remediation job status."
+      t: "`$ARRAY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+    vendors: {
+      h: "Vendors"
+      n: "vendors"
+      r: false
+      sh: "Filter by vendor types."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "posture_api_export_job"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "00000000-0000-0000-0000-000000000001-00000000-0000-0000-0000-000000000002"
+                k: "param"
+                n: "finding_id"
+                or: "storage_namespace_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export"
+          q: {
+            exist: [
+              "account_id"
+              "finding_id"
+            ]
+          }
+          r: {
+            param: {
+              storage_namespace_id: "finding_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+            {
+              var: "finding_id"
+            }
+            {
+              lit: "instances"
+            }
+            {
+              lit: "export"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/content/export"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/content/export"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "content"
+            }
+            {
+              lit: "export"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/findings/export"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/findings/export"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+            {
+              lit: "export"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/data-security/posture/remediations/jobs/export"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/data-security/posture/remediations/jobs/export"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "remediations"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              lit: "export"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/data-security/posture/exports/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/data-security/posture/exports/{id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "exports"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

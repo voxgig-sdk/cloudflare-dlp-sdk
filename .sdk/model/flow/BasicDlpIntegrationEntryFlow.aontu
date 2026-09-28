@@ -1,0 +1,59 @@
+# BasicDlpIntegrationEntryFlow
+
+main: kit: flow: BasicDlpIntegrationEntryFlow:
+{
+  entity: "dlp_integration_entry",
+  kind: "basic",
+  name: "BasicDlpIntegrationEntryFlow",
+  step: [
+    {
+      i: {
+        ref: "dlp_integration_entry_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "dlp_integration_entry_ref01",
+        srcdatavar: "dlp_integration_entry_ref01_data",
+        suffix: "_up0",
+        textfield: "profile_id"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-dlp_integration_entry_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "dlp_integration_entry_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "dlp_integration_entry01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicDlpIntegrationEntryFlow"
+}

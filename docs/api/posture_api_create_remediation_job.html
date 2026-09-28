@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>PostureApiCreateRemediationJob | Cloudflare DLP</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare DLP<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-dlp-sdk">voxgig-sdk/cloudflare-dlp-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare DLP</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/dlp_custom_prompt_topic.html">DlpCustomPromptTopic</a>
+<a href="../api/dlp_data_class.html">DlpDataClass</a>
+<a href="../api/dlp_data_tag.html">DlpDataTag</a>
+<a href="../api/dlp_data_tag_category.html">DlpDataTagCategory</a>
+<a href="../api/dlp_data_tag_category_template.html">DlpDataTagCategoryTemplate</a>
+<a href="../api/dlp_dataset.html">DlpDataset</a>
+<a href="../api/dlp_document_fingerprint.html">DlpDocumentFingerprint</a>
+<a href="../api/dlp_email.html">DlpEmail</a>
+<a href="../api/dlp_entry.html">DlpEntry</a>
+<a href="../api/dlp_integration_entry.html">DlpIntegrationEntry</a>
+<a href="../api/dlp_predefined_entry.html">DlpPredefinedEntry</a>
+<a href="../api/dlp_profile.html">DlpProfile</a>
+<a href="../api/dlp_sensitivity_group.html">DlpSensitivityGroup</a>
+<a href="../api/dlp_sensitivity_group_template.html">DlpSensitivityGroupTemplate</a>
+<a href="../api/dlp_sensitivity_level.html">DlpSensitivityLevel</a>
+<a href="../api/dlp_setting.html">DlpSetting</a>
+<a href="../api/policy.html">Policy</a>
+<a aria-current="page" href="../api/posture_api_create_remediation_job.html">PostureApiCreateRemediationJob</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_iddata-securitypostureremediationsjobs">POST /accounts/{account_id}/data-security/posture/remediations/jobs</a></div>
+<a href="../api/posture_api_create_webhook_job.html">PostureApiCreateWebhookJob</a>
+<a href="../api/posture_api_export_job.html">PostureApiExportJob</a>
+<a href="../api/posture_api_finding.html">PostureApiFinding</a>
+<a href="../api/posture_api_finding_instance.html">PostureApiFindingInstance</a>
+<a href="../api/posture_api_finding_type.html">PostureApiFindingType</a>
+<a href="../api/posture_api_paginated_content_asset_list.html">PostureApiPaginatedContentAssetList</a>
+<a href="../api/posture_api_paginated_export_job_list.html">PostureApiPaginatedExportJobList</a>
+<a href="../api/posture_api_paginated_finding_instance_list.html">PostureApiPaginatedFindingInstanceList</a>
+<a href="../api/posture_api_paginated_finding_list.html">PostureApiPaginatedFindingList</a>
+<a href="../api/posture_api_paginated_finding_type_list.html">PostureApiPaginatedFindingTypeList</a>
+<a href="../api/posture_api_paginated_remediation_job_list.html">PostureApiPaginatedRemediationJobList</a>
+<a href="../api/posture_api_paginated_remediation_type_list.html">PostureApiPaginatedRemediationTypeList</a>
+<a href="../api/posture_api_webhook.html">PostureApiWebhook</a>
+<a href="../api/posture_api_webhook_list.html">PostureApiWebhookList</a>
+<a href="../api/webhook.html">Webhook</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="postureapicreateremediationjob">PostureApiCreateRemediationJob</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddata-securitypostureremediationsjobs"><code>/accounts/{account_id}/data-security/posture/remediations/jobs</code></a></td>
+<td><code>create</code></td>
+<td>OK: Successful HTTP request</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">created, err := client.PostureApiCreateRemediationJob(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;finding_instance_ids&quot;: []any{}, &quot;messages&quot;: []any{}, &quot;remediation_type_id&quot;: &quot;example&quot;, &quot;result&quot;: map[string]any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local created, err = client:PostureApiCreateRemediationJob():create({ account_id = &quot;example&quot;, errors = {}, finding_instance_ids = {}, messages = {}, remediation_type_id = &quot;example&quot;, result = {}, success = true })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$created = $client-&gt;PostureApiCreateRemediationJob()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;finding_instance_ids&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;remediation_type_id&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">created = client.PostureApiCreateRemediationJob().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;finding_instance_ids&quot;: [], &quot;messages&quot;: [], &quot;remediation_type_id&quot;: &quot;example&quot;, &quot;result&quot;: {}, &quot;success&quot;: True })
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">created = client.PostureApiCreateRemediationJob.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;finding_instance_ids&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;remediation_type_id&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; {}, &quot;success&quot; =&gt; true })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const created = await client.PostureApiCreateRemediationJob().create({ account_id: &quot;example&quot;, errors: [], finding_instance_ids: [], messages: [], remediation_type_id: &quot;example&quot;, result: {}, success: true })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Array of error messages.</td>
+</tr>
+<tr>
+<td><code>finding_instance_ids</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>UUIDs identifying Finding Instances.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Array of informational messages.</td>
+</tr>
+<tr>
+<td><code>remediation_type_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>A UUID identifying this Remediation Type.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_iddata-securitypostureremediationsjobs" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/data-security/posture/remediations/jobs</h3>
+<p>Operation ID: <code>CreateRemediationJobs</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID for the user making the request. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>finding_instance_ids</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>Yes</td>
+<td>UUIDs identifying Finding Instances.</td>
+</tr>
+<tr>
+<td><code>remediation_type_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>A UUID identifying this Remediation Type.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-ok-successful-http-request" class="status" data-status="2xx">200: OK: Successful HTTP request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Array of error messages.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Array of informational messages.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Successfully created remediation jobs.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Asset information for a remediation job.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Category information for a remediation job asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category.service</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specific service within the vendor.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Asset type.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category.vendor</code></td>
+<td><code>enum: AWS, Anthropic, Bitbucket, Box, Confluence, Dropbox, ...</code></td>
+<td>Yes</td>
+<td>Display names for vendor types.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.external_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>External identifier from the source system.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Additional fields associated with the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields[].link</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Optional link associated with the field.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Field name.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields[].value</code></td>
+<td><code>string or number or boolean</code></td>
+<td>Yes</td>
+<td>Field value (can be string, number, or boolean).</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.link</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Direct link to the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable name of the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].created_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>When the remediation job was created.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Encoded finding ID.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_instance_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>ID of the finding instance being remediated.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_type_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>ID of the finding type.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_type_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the finding type.</td>
+</tr>
+<tr>
+<td><code>result.created[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the remediation job.</td>
+</tr>
+<tr>
+<td><code>result.created[].integration_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the integration.</td>
+</tr>
+<tr>
+<td><code>result.created[].last_updated</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>When the remediation job was last updated.</td>
+</tr>
+<tr>
+<td><code>result.created[].remediation_type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Type of remediation being performed.</td>
+</tr>
+<tr>
+<td><code>result.created[].status</code></td>
+<td><code>enum: pending, processing, completed, failed, validating</code></td>
+<td>Yes</td>
+<td>Status of a remediation job.</td>
+</tr>
+<tr>
+<td><code>result.created[].triggered_by_actor</code></td>
+<td><code>enum: user, account_token, null</code></td>
+<td>No</td>
+<td>Type of actor that triggered the remediation job. Null on legacy rows created before this column was populated.</td>
+</tr>
+<tr>
+<td><code>result.created[].triggered_by_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ID of the actor that triggered the job. Meaning depends on <code>triggered_by_actor</code>. Null on legacy rows.</td>
+</tr>
+<tr>
+<td><code>result.created[].triggered_by_user</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who triggered the remediation. For account-token actors this is the literal &quot;Account API Token&quot;; for policy actors this is empty.</td>
+</tr>
+<tr>
+<td><code>result.failed</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Failed remediation job creation attempts.</td>
+</tr>
+<tr>
+<td><code>result.failed[].error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Error message describing the failure.</td>
+</tr>
+<tr>
+<td><code>result.failed[].finding_instance_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>ID of the finding instance that failed to create a remediation job.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-invalid-request-parameters" class="status" data-status="4xx">400: Bad Request: Invalid request parameters</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Array of error messages.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Array of informational messages.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Successfully created remediation jobs.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Asset information for a remediation job.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Category information for a remediation job asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category.service</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Specific service within the vendor.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Asset type.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.category.vendor</code></td>
+<td><code>enum: AWS, Anthropic, Bitbucket, Box, Confluence, Dropbox, ...</code></td>
+<td>Yes</td>
+<td>Display names for vendor types.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.external_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>External identifier from the source system.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Additional fields associated with the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields[].link</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Optional link associated with the field.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Field name.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.fields[].value</code></td>
+<td><code>string or number or boolean</code></td>
+<td>Yes</td>
+<td>Field value (can be string, number, or boolean).</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.link</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Direct link to the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].asset.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable name of the asset.</td>
+</tr>
+<tr>
+<td><code>result.created[].created_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>When the remediation job was created.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Encoded finding ID.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_instance_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>ID of the finding instance being remediated.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_type_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>ID of the finding type.</td>
+</tr>
+<tr>
+<td><code>result.created[].finding_type_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the finding type.</td>
+</tr>
+<tr>
+<td><code>result.created[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the remediation job.</td>
+</tr>
+<tr>
+<td><code>result.created[].integration_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the integration.</td>
+</tr>
+<tr>
+<td><code>result.created[].last_updated</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>When the remediation job was last updated.</td>
+</tr>
+<tr>
+<td><code>result.created[].remediation_type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Type of remediation being performed.</td>
+</tr>
+<tr>
+<td><code>result.created[].status</code></td>
+<td><code>enum: pending, processing, completed, failed, validating</code></td>
+<td>Yes</td>
+<td>Status of a remediation job.</td>
+</tr>
+<tr>
+<td><code>result.created[].triggered_by_actor</code></td>
+<td><code>enum: user, account_token, null</code></td>
+<td>No</td>
+<td>Type of actor that triggered the remediation job. Null on legacy rows created before this column was populated.</td>
+</tr>
+<tr>
+<td><code>result.created[].triggered_by_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ID of the actor that triggered the job. Meaning depends on <code>triggered_by_actor</code>. Null on legacy rows.</td>
+</tr>
+<tr>
+<td><code>result.created[].triggered_by_user</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who triggered the remediation. For account-token actors this is the literal &quot;Account API Token&quot;; for policy actors this is empty.</td>
+</tr>
+<tr>
+<td><code>result.failed</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Failed remediation job creation attempts.</td>
+</tr>
+<tr>
+<td><code>result.failed[].error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Error message describing the failure.</td>
+</tr>
+<tr>
+<td><code>result.failed[].finding_instance_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>ID of the finding instance that failed to create a remediation job.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-conflict-no-supplied-finding-instances-are-currently-eligible-for-remediation" class="status" data-status="4xx">409: Conflict: No supplied finding instances are currently eligible for remediation</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Error or message code.</td>
+</tr>
+<tr>
+<td><code>errors[].documentation_url</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Link to relevant documentation.</td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable message.</td>
+</tr>
+<tr>
+<td><code>errors[].source</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].source.pointer</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>JSON pointer to the source of the error.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Error or message code.</td>
+</tr>
+<tr>
+<td><code>messages[].documentation_url</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td>Link to relevant documentation.</td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable message.</td>
+</tr>
+<tr>
+<td><code>messages[].source</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].source.pointer</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>JSON pointer to the source of the error.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Indicates the request failed.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

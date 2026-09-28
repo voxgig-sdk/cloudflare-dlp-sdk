@@ -1,0 +1,22 @@
+# BasicPostureApiCreateWebhookJobFlow
+
+main: kit: flow: BasicPostureApiCreateWebhookJobFlow:
+{
+  entity: "posture_api_create_webhook_job",
+  kind: "basic",
+  name: "BasicPostureApiCreateWebhookJobFlow",
+  step: [
+    {
+      i: {
+        ref: "posture_api_create_webhook_job_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicPostureApiCreateWebhookJobFlow"
+}

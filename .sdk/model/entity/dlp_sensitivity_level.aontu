@@ -1,0 +1,415 @@
+# Entity: dlp_sensitivity_level
+
+main: kit: entity: dlp_sensitivity_level: {
+
+  alias: field: {}
+
+  fields: {
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      op: {
+        list: {
+          req: false
+          type: "`$ARRAY`"
+        }
+      }
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "dlp_sensitivity_level"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "sensitivity_group_id"
+                or: "sensitivity_group_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels"
+          q: {
+            exist: [
+              "account_id"
+              "sensitivity_group_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "sensitivity_groups"
+            }
+            {
+              var: "sensitivity_group_id"
+            }
+            {
+              lit: "levels"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "sensitivity_group_id"
+                or: "sensitivity_group_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels"
+          q: {
+            exist: [
+              "account_id"
+              "sensitivity_group_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "sensitivity_groups"
+            }
+            {
+              var: "sensitivity_group_id"
+            }
+            {
+              lit: "levels"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "sensitivity_level_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "sensitivity_group_id"
+                or: "sensitivity_group_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "sensitivity_group_id"
+            ]
+          }
+          r: {
+            param: {
+              sensitivity_level_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "sensitivity_groups"
+            }
+            {
+              var: "sensitivity_group_id"
+            }
+            {
+              lit: "levels"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "sensitivity_level_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "sensitivity_group_id"
+                or: "sensitivity_group_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "sensitivity_group_id"
+            ]
+          }
+          r: {
+            param: {
+              sensitivity_level_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "sensitivity_groups"
+            }
+            {
+              var: "sensitivity_group_id"
+            }
+            {
+              lit: "levels"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "sensitivity_level_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "sensitivity_group_id"
+                or: "sensitivity_group_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "sensitivity_group_id"
+            ]
+          }
+          r: {
+            param: {
+              sensitivity_level_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "dlp"
+            }
+            {
+              lit: "sensitivity_groups"
+            }
+            {
+              var: "sensitivity_group_id"
+            }
+            {
+              lit: "levels"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

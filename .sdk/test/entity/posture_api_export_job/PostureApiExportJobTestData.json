@@ -1,0 +1,130 @@
+{
+  "existing": {
+    "posture_api_export_job": {
+      "POSTURE_API_EXPORT_JOB00": {
+        "archived": true,
+        "dlp_profile_id": "DLP_PROFILE01",
+        "dlp_profile_information": [],
+        "errors": [],
+        "id": "POSTURE_API_EXPORT_JOB00",
+        "ignored": false,
+        "integration_id": "INTEGRATION01",
+        "max_affliction_date": "scf",
+        "max_updated_at": "sd0",
+        "messages": [],
+        "min_affliction_date": "sd2",
+        "min_updated_at": "sd3",
+        "orders": [],
+        "product": "sd5",
+        "result": {},
+        "search": "sd7",
+        "severities": [],
+        "status": [],
+        "success": true,
+        "vendors": [],
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_EXPORT_JOB01": {
+        "archived": true,
+        "dlp_profile_id": "DLP_PROFILE01",
+        "dlp_profile_information": [],
+        "errors": [],
+        "id": "POSTURE_API_EXPORT_JOB01",
+        "ignored": false,
+        "integration_id": "INTEGRATION01",
+        "max_affliction_date": "s197",
+        "max_updated_at": "s198",
+        "messages": [],
+        "min_affliction_date": "s19a",
+        "min_updated_at": "s19b",
+        "orders": [],
+        "product": "s19d",
+        "result": {},
+        "search": "s19f",
+        "severities": [],
+        "status": [],
+        "success": true,
+        "vendors": [],
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_EXPORT_JOB02": {
+        "archived": true,
+        "dlp_profile_id": "DLP_PROFILE01",
+        "dlp_profile_information": [],
+        "errors": [],
+        "id": "POSTURE_API_EXPORT_JOB02",
+        "ignored": false,
+        "integration_id": "INTEGRATION01",
+        "max_affliction_date": "s25f",
+        "max_updated_at": "s260",
+        "messages": [],
+        "min_affliction_date": "s262",
+        "min_updated_at": "s263",
+        "orders": [],
+        "product": "s265",
+        "result": {},
+        "search": "s267",
+        "severities": [],
+        "status": [],
+        "success": true,
+        "vendors": [],
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_export_job": {
+      "posture_api_export_job_ref01": {
+        "archived": true,
+        "dlp_profile_id": "DLP_PROFILE01",
+        "dlp_profile_information": [],
+        "errors": [],
+        "ignored": false,
+        "integration_id": "INTEGRATION01",
+        "max_affliction_date": "s327",
+        "max_updated_at": "s328",
+        "messages": [],
+        "min_affliction_date": "s32a",
+        "min_updated_at": "s32b",
+        "orders": [],
+        "product": "s32d",
+        "result": {},
+        "search": "s32f",
+        "severities": [],
+        "status": [],
+        "success": true,
+        "vendors": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/content/export": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/findings/export": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/remediations/jobs/export": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/data-security/posture/exports/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DlpCustomPromptTopic | Cloudflare DLP</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare DLP<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-dlp-sdk">voxgig-sdk/cloudflare-dlp-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare DLP</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a aria-current="page" href="../api/dlp_custom_prompt_topic.html">DlpCustomPromptTopic</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_iddlpcustom_prompt_topics">POST /accounts/{account_id}/dlp/custom_prompt_topics</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpcustom_prompt_topics">GET /accounts/{account_id}/dlp/custom_prompt_topics</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpcustom_prompt_topicsentry_id">GET /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_iddlpcustom_prompt_topicsentry_id">DELETE /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</a>
+<a class="nav-section" href="#put-accountsaccount_iddlpcustom_prompt_topicsentry_id">PUT /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</a></div>
+<a href="../api/dlp_data_class.html">DlpDataClass</a>
+<a href="../api/dlp_data_tag.html">DlpDataTag</a>
+<a href="../api/dlp_data_tag_category.html">DlpDataTagCategory</a>
+<a href="../api/dlp_data_tag_category_template.html">DlpDataTagCategoryTemplate</a>
+<a href="../api/dlp_dataset.html">DlpDataset</a>
+<a href="../api/dlp_document_fingerprint.html">DlpDocumentFingerprint</a>
+<a href="../api/dlp_email.html">DlpEmail</a>
+<a href="../api/dlp_entry.html">DlpEntry</a>
+<a href="../api/dlp_integration_entry.html">DlpIntegrationEntry</a>
+<a href="../api/dlp_predefined_entry.html">DlpPredefinedEntry</a>
+<a href="../api/dlp_profile.html">DlpProfile</a>
+<a href="../api/dlp_sensitivity_group.html">DlpSensitivityGroup</a>
+<a href="../api/dlp_sensitivity_group_template.html">DlpSensitivityGroupTemplate</a>
+<a href="../api/dlp_sensitivity_level.html">DlpSensitivityLevel</a>
+<a href="../api/dlp_setting.html">DlpSetting</a>
+<a href="../api/policy.html">Policy</a>
+<a href="../api/posture_api_create_remediation_job.html">PostureApiCreateRemediationJob</a>
+<a href="../api/posture_api_create_webhook_job.html">PostureApiCreateWebhookJob</a>
+<a href="../api/posture_api_export_job.html">PostureApiExportJob</a>
+<a href="../api/posture_api_finding.html">PostureApiFinding</a>
+<a href="../api/posture_api_finding_instance.html">PostureApiFindingInstance</a>
+<a href="../api/posture_api_finding_type.html">PostureApiFindingType</a>
+<a href="../api/posture_api_paginated_content_asset_list.html">PostureApiPaginatedContentAssetList</a>
+<a href="../api/posture_api_paginated_export_job_list.html">PostureApiPaginatedExportJobList</a>
+<a href="../api/posture_api_paginated_finding_instance_list.html">PostureApiPaginatedFindingInstanceList</a>
+<a href="../api/posture_api_paginated_finding_list.html">PostureApiPaginatedFindingList</a>
+<a href="../api/posture_api_paginated_finding_type_list.html">PostureApiPaginatedFindingTypeList</a>
+<a href="../api/posture_api_paginated_remediation_job_list.html">PostureApiPaginatedRemediationJobList</a>
+<a href="../api/posture_api_paginated_remediation_type_list.html">PostureApiPaginatedRemediationTypeList</a>
+<a href="../api/posture_api_webhook.html">PostureApiWebhook</a>
+<a href="../api/posture_api_webhook_list.html">PostureApiWebhookList</a>
+<a href="../api/webhook.html">Webhook</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="dlpcustomprompttopic">DlpCustomPromptTopic</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddlpcustom_prompt_topics"><code>/accounts/{account_id}/dlp/custom_prompt_topics</code></a></td>
+<td><code>create</code></td>
+<td>Create custom prompt topic response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpcustom_prompt_topics"><code>/accounts/{account_id}/dlp/custom_prompt_topics</code></a></td>
+<td><code>list</code></td>
+<td>List custom prompt topics response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpcustom_prompt_topicsentry_id"><code>/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get custom prompt topic response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddlpcustom_prompt_topicsentry_id"><code>/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Delete custom prompt topic response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_iddlpcustom_prompt_topicsentry_id"><code>/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update custom prompt topic response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">dlp_custom_prompt_topics, err := client.DlpCustomPromptTopic(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dlp_custom_prompt_topics)
+dlp_custom_prompt_topic, err := client.DlpCustomPromptTopic(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dlp_custom_prompt_topic)
+created, err := client.DlpCustomPromptTopic(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;enabled&quot;: true, &quot;name&quot;: &quot;example&quot;, &quot;result&quot;: map[string]any{}, &quot;topic&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.DlpCustomPromptTopic(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.DlpCustomPromptTopic(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local dlp_custom_prompt_topics, err = client:DlpCustomPromptTopic():list({ account_id = &quot;example&quot; })
+local dlp_custom_prompt_topic, err = client:DlpCustomPromptTopic():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:DlpCustomPromptTopic():create({ account_id = &quot;example&quot;, enabled = true, name = &quot;example&quot;, result = {}, topic = &quot;example&quot; })
+local updated, err = client:DlpCustomPromptTopic():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, description = &quot;example&quot; })
+local removed, err = client:DlpCustomPromptTopic():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$dlp_custom_prompt_topics = $client-&gt;DlpCustomPromptTopic()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$dlp_custom_prompt_topic = $client-&gt;DlpCustomPromptTopic()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;DlpCustomPromptTopic()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;enabled&quot; =&gt; true, &quot;name&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; [], &quot;topic&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;DlpCustomPromptTopic()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot;]);
+$client-&gt;DlpCustomPromptTopic()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">dlp_custom_prompt_topics = client.DlpCustomPromptTopic().list({&quot;account_id&quot;: &quot;example&quot;})
+dlp_custom_prompt_topic = client.DlpCustomPromptTopic().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.DlpCustomPromptTopic().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;enabled&quot;: True, &quot;name&quot;: &quot;example&quot;, &quot;result&quot;: {}, &quot;topic&quot;: &quot;example&quot; })
+updated = client.DlpCustomPromptTopic().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;})
+client.DlpCustomPromptTopic().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">dlp_custom_prompt_topics = client.DlpCustomPromptTopic.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+dlp_custom_prompt_topic = client.DlpCustomPromptTopic.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.DlpCustomPromptTopic.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;enabled&quot; =&gt; true, &quot;name&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; {}, &quot;topic&quot; =&gt; &quot;example&quot; })
+updated = client.DlpCustomPromptTopic.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot; })
+client.DlpCustomPromptTopic.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const dlp_custom_prompt_topics = await client.DlpCustomPromptTopic().list({ account_id: &quot;example&quot; })
+const dlp_custom_prompt_topic = await client.DlpCustomPromptTopic().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.DlpCustomPromptTopic().create({ account_id: &quot;example&quot;, enabled: true, name: &quot;example&quot;, result: {}, topic: &quot;example&quot; })
+const updated = await client.DlpCustomPromptTopic().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, description: &quot;example&quot; })
+await client.DlpCustomPromptTopic().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>profile_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Profile Id</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>topic</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Topic</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_iddlpcustom_prompt_topics" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/dlp/custom_prompt_topics</h3>
+<p>Operation ID: <code>dlp-custom-prompt-topics-create</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>topic</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-create-custom-prompt-topic-response" class="status" data-status="2xx">200: Create custom prompt topic response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-custom-prompt-topic-failure-response">4XX: Create custom prompt topic failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_iddlpcustom_prompt_topics" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/custom_prompt_topics</h3>
+<p>Operation ID: <code>dlp-custom-prompt-topics-list</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-custom-prompt-topics-response" class="status" data-status="2xx">200: List custom prompt topics response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-custom-prompt-topics-failure-response">4XX: List custom prompt topics failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddlpcustom_prompt_topicsentry_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</h3>
+<p>Operation ID: <code>dlp-custom-prompt-topics-get</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>entry_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-get-custom-prompt-topic-response" class="status" data-status="2xx">200: Get custom prompt topic response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-custom-prompt-topic-failure-response">4XX: Get custom prompt topic failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_iddlpcustom_prompt_topicsentry_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</h3>
+<p>Operation ID: <code>dlp-custom-prompt-topics-delete</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>entry_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-delete-custom-prompt-topic-response" class="status" data-status="2xx">200: Delete custom prompt topic response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-delete-custom-prompt-topic-failure-response">4XX: Delete custom prompt topic failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_iddlpcustom_prompt_topicsentry_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}</h3>
+<p>Operation ID: <code>dlp-custom-prompt-topics-update</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>entry_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>topic</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-update-custom-prompt-topic-response" class="status" data-status="2xx">200: Update custom prompt topic response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-custom-prompt-topic-failure-response">4XX: Update custom prompt topic failure response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "posture_api_paginated_content_asset_list": {
+      "POSTURE_API_PAGINATED_CONTENT_ASSET_LIST00": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_PAGINATED_CONTENT_ASSET_LIST01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_PAGINATED_CONTENT_ASSET_LIST02": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_paginated_content_asset_list": {
+      "posture_api_paginated_content_asset_list_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": [],
+        "result_info": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/data-security/posture/content": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

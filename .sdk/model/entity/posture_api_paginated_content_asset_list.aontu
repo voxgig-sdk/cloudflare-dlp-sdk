@@ -1,0 +1,184 @@
+# Entity: posture_api_paginated_content_asset_list
+
+main: kit: entity: posture_api_paginated_content_asset_list: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      sh: "Array of content asset objects."
+      t: "`$ARRAY`"
+    }
+    result_info: {
+      h: "Result Info"
+      n: "result_info"
+      r: true
+      sh: "Pagination and result information."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "posture_api_paginated_content_asset_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/data-security/posture/content"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "dlp_profile_id"
+                or: "dlp_profile_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "integration_id"
+                or: "integration_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "max_affliction_date"
+                or: "max_affliction_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "min_affliction_date"
+                or: "min_affliction_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "GOOGLE_WORKSPACE"
+                k: "query"
+                n: "vendor"
+                or: "vendor"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/data-security/posture/content"
+          q: {
+            exist: [
+              "account_id"
+              "direction"
+              "dlp_profile_id"
+              "integration_id"
+              "max_affliction_date"
+              "min_affliction_date"
+              "order"
+              "page"
+              "per_page"
+              "search"
+              "vendor"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "content"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

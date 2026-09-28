@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "posture_api_create_remediation_job": {
+      "POSTURE_API_CREATE_REMEDIATION_JOB00": {
+        "errors": [],
+        "finding_instance_ids": [],
+        "messages": [],
+        "remediation_type_id": "REMEDIATION_TYPE01",
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "POSTURE_API_CREATE_REMEDIATION_JOB00"
+      },
+      "POSTURE_API_CREATE_REMEDIATION_JOB01": {
+        "errors": [],
+        "finding_instance_ids": [],
+        "messages": [],
+        "remediation_type_id": "REMEDIATION_TYPE01",
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "POSTURE_API_CREATE_REMEDIATION_JOB01"
+      },
+      "POSTURE_API_CREATE_REMEDIATION_JOB02": {
+        "errors": [],
+        "finding_instance_ids": [],
+        "messages": [],
+        "remediation_type_id": "REMEDIATION_TYPE01",
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "id": "POSTURE_API_CREATE_REMEDIATION_JOB02"
+      }
+    }
+  },
+  "new": {
+    "posture_api_create_remediation_job": {
+      "posture_api_create_remediation_job_ref01": {
+        "errors": [],
+        "finding_instance_ids": [],
+        "messages": [],
+        "remediation_type_id": "REMEDIATION_TYPE01",
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/remediations/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

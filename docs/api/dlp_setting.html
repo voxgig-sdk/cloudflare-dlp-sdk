@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DlpSetting | Cloudflare DLP</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare DLP<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-dlp-sdk">voxgig-sdk/cloudflare-dlp-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare DLP</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/dlp_custom_prompt_topic.html">DlpCustomPromptTopic</a>
+<a href="../api/dlp_data_class.html">DlpDataClass</a>
+<a href="../api/dlp_data_tag.html">DlpDataTag</a>
+<a href="../api/dlp_data_tag_category.html">DlpDataTagCategory</a>
+<a href="../api/dlp_data_tag_category_template.html">DlpDataTagCategoryTemplate</a>
+<a href="../api/dlp_dataset.html">DlpDataset</a>
+<a href="../api/dlp_document_fingerprint.html">DlpDocumentFingerprint</a>
+<a href="../api/dlp_email.html">DlpEmail</a>
+<a href="../api/dlp_entry.html">DlpEntry</a>
+<a href="../api/dlp_integration_entry.html">DlpIntegrationEntry</a>
+<a href="../api/dlp_predefined_entry.html">DlpPredefinedEntry</a>
+<a href="../api/dlp_profile.html">DlpProfile</a>
+<a href="../api/dlp_sensitivity_group.html">DlpSensitivityGroup</a>
+<a href="../api/dlp_sensitivity_group_template.html">DlpSensitivityGroupTemplate</a>
+<a href="../api/dlp_sensitivity_level.html">DlpSensitivityLevel</a>
+<a aria-current="page" href="../api/dlp_setting.html">DlpSetting</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_iddlppatternsvalidate">POST /accounts/{account_id}/dlp/patterns/validate</a>
+<a class="nav-section" href="#get-accountsaccount_iddlplimits">GET /accounts/{account_id}/dlp/limits</a>
+<a class="nav-section" href="#get-accountsaccount_iddlppayload_log">GET /accounts/{account_id}/dlp/payload_log</a>
+<a class="nav-section" href="#get-accountsaccount_iddlpsettings">GET /accounts/{account_id}/dlp/settings</a>
+<a class="nav-section" href="#patch-accountsaccount_iddlpsettings">PATCH /accounts/{account_id}/dlp/settings</a>
+<a class="nav-section" href="#delete-accountsaccount_iddlpsettings">DELETE /accounts/{account_id}/dlp/settings</a>
+<a class="nav-section" href="#put-accountsaccount_iddlppayload_log">PUT /accounts/{account_id}/dlp/payload_log</a>
+<a class="nav-section" href="#put-accountsaccount_iddlpsettings">PUT /accounts/{account_id}/dlp/settings</a></div>
+<a href="../api/policy.html">Policy</a>
+<a href="../api/posture_api_create_remediation_job.html">PostureApiCreateRemediationJob</a>
+<a href="../api/posture_api_create_webhook_job.html">PostureApiCreateWebhookJob</a>
+<a href="../api/posture_api_export_job.html">PostureApiExportJob</a>
+<a href="../api/posture_api_finding.html">PostureApiFinding</a>
+<a href="../api/posture_api_finding_instance.html">PostureApiFindingInstance</a>
+<a href="../api/posture_api_finding_type.html">PostureApiFindingType</a>
+<a href="../api/posture_api_paginated_content_asset_list.html">PostureApiPaginatedContentAssetList</a>
+<a href="../api/posture_api_paginated_export_job_list.html">PostureApiPaginatedExportJobList</a>
+<a href="../api/posture_api_paginated_finding_instance_list.html">PostureApiPaginatedFindingInstanceList</a>
+<a href="../api/posture_api_paginated_finding_list.html">PostureApiPaginatedFindingList</a>
+<a href="../api/posture_api_paginated_finding_type_list.html">PostureApiPaginatedFindingTypeList</a>
+<a href="../api/posture_api_paginated_remediation_job_list.html">PostureApiPaginatedRemediationJobList</a>
+<a href="../api/posture_api_paginated_remediation_type_list.html">PostureApiPaginatedRemediationTypeList</a>
+<a href="../api/posture_api_webhook.html">PostureApiWebhook</a>
+<a href="../api/posture_api_webhook_list.html">PostureApiWebhookList</a>
+<a href="../api/webhook.html">Webhook</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="dlpsetting">DlpSetting</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddlppatternsvalidate"><code>/accounts/{account_id}/dlp/patterns/validate</code></a></td>
+<td><code>create</code></td>
+<td>Validation response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlplimits"><code>/accounts/{account_id}/dlp/limits</code></a></td>
+<td><code>load</code></td>
+<td>Limits retrieved successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlppayload_log"><code>/accounts/{account_id}/dlp/payload_log</code></a></td>
+<td><code>load</code></td>
+<td>Payload log settings</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddlpsettings"><code>/accounts/{account_id}/dlp/settings</code></a></td>
+<td><code>load</code></td>
+<td>DLP settings</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_iddlpsettings"><code>/accounts/{account_id}/dlp/settings</code></a></td>
+<td><code>patch</code></td>
+<td>DLP settings</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_iddlpsettings"><code>/accounts/{account_id}/dlp/settings</code></a></td>
+<td><code>remove</code></td>
+<td>DLP settings reset</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_iddlppayload_log"><code>/accounts/{account_id}/dlp/payload_log</code></a></td>
+<td><code>update</code></td>
+<td>Payload log settings</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_iddlpsettings"><code>/accounts/{account_id}/dlp/settings</code></a></td>
+<td><code>update</code></td>
+<td>DLP settings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">dlp_setting, err := client.DlpSetting(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dlp_setting)
+created, err := client.DlpSetting(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;regex&quot;: &quot;example&quot;, &quot;result&quot;: map[string]any{}}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.DlpSetting(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;ai_context_analysis&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.DlpSetting(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local dlp_setting, err = client:DlpSetting():load({ account_id = &quot;example&quot; })
+local created, err = client:DlpSetting():create({ account_id = &quot;example&quot;, regex = &quot;example&quot;, result = {} })
+local updated, err = client:DlpSetting():update({ account_id = &quot;example&quot;, ai_context_analysis = true })
+local removed, err = client:DlpSetting():remove({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$dlp_setting = $client-&gt;DlpSetting()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;DlpSetting()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;regex&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; []]);
+$updated = $client-&gt;DlpSetting()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;ai_context_analysis&quot; =&gt; true]);
+$client-&gt;DlpSetting()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">dlp_setting = client.DlpSetting().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.DlpSetting().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;regex&quot;: &quot;example&quot;, &quot;result&quot;: {} })
+updated = client.DlpSetting().update({&quot;account_id&quot;: &quot;example&quot;, &quot;ai_context_analysis&quot;: True})
+client.DlpSetting().remove({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">dlp_setting = client.DlpSetting.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.DlpSetting.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;regex&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; {} })
+updated = client.DlpSetting.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;ai_context_analysis&quot; =&gt; true })
+client.DlpSetting.remove({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const dlp_setting = await client.DlpSetting().load({ account_id: &quot;example&quot; })
+const created = await client.DlpSetting().create({ account_id: &quot;example&quot;, regex: &quot;example&quot;, result: {} })
+const updated = await client.DlpSetting().update({ account_id: &quot;example&quot;, ai_context_analysis: true })
+await client.DlpSetting().remove({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_analysis</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether AI context analysis is enabled at the account level.</td>
+</tr>
+<tr>
+<td><code>masking_level</code></td>
+<td><code>any</code></td>
+<td>No</td>
+<td>Masking Level</td>
+</tr>
+<tr>
+<td><code>max_match_bytes</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Maximum number of bytes that the regular expression can match.</td>
+</tr>
+<tr>
+<td><code>ocr</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether OCR is enabled at the account level.</td>
+</tr>
+<tr>
+<td><code>payload_logging</code></td>
+<td><code>any</code></td>
+<td>No</td>
+<td>Payload Logging</td>
+</tr>
+<tr>
+<td><code>public_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Base64-encoded public key for encrypting payload logs.</td>
+</tr>
+<tr>
+<td><code>regex</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Regex</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>DLP account-level settings response.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_iddlppatternsvalidate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/dlp/patterns/validate</h3>
+<p>Operation ID: <code>dlp-pattern-validate</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_match_bytes</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td>Maximum number of bytes that the regular expression can match. If this is <code>null</code> then there is no limit on the length. Patterns can use <code>*</code> and <code>+</code>. Otherwise repeats should use a range <code>&amp;#123;m,n&amp;#125;</code> to restrict patterns to the length. If this field is missing, then a default length limit is used. Note that the length is specified in bytes. Since regular expressions use UTF-8 the pattern <code>.</code> can match up to 4 bytes. Hence <code>.&amp;#123;1,256&amp;#125;</code> has a maximum length of 1024 bytes.</td>
+</tr>
+<tr>
+<td><code>regex</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-validation-response" class="status" data-status="2xx">200: Validation response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failed-to-validate">4XX: Failed to validate</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddlplimits" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/limits</h3>
+<p>Operation ID: <code>dlp-limits-get</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-limits-retrieved-successfully" class="status" data-status="2xx">200: Limits retrieved successfully</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-limits-get-failed">4XX: Limits get failed</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddlppayload_log" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/payload_log</h3>
+<p>Operation ID: <code>dlp-payload-log-get</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-payload-log-settings" class="status" data-status="2xx">200: Payload log settings</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failed-to-get-payload-log-settings">4XX: Failed to get payload log settings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_iddlpsettings" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/dlp/settings</h3>
+<p>Operation ID: <code>dlp-settings-get</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-dlp-settings" class="status" data-status="2xx">200: DLP settings</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failed-to-get-dlp-settings">4XX: Failed to get DLP settings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="patch">patch</h2>
+<h3 id="patch-accountsaccount_iddlpsettings" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/dlp/settings</h3>
+<p>Operation ID: <code>dlp-settings-edit</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_analysis</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether AI context analysis is enabled at the account level.</td>
+</tr>
+<tr>
+<td><code>ocr</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether OCR is enabled at the account level.</td>
+</tr>
+<tr>
+<td><code>payload_logging</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-dlp-settings-1" class="status" data-status="2xx">200: DLP settings</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failed-to-update-dlp-settings">4XX: Failed to update DLP settings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_iddlpsettings" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/dlp/settings</h3>
+<p>Operation ID: <code>dlp-settings-delete</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-dlp-settings-reset" class="status" data-status="2xx">200: DLP settings reset</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failed-to-delete-dlp-settings">4XX: Failed to delete DLP settings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_iddlppayload_log" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/dlp/payload_log</h3>
+<p>Operation ID: <code>dlp-payload-log-put</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>masking_level</code></td>
+<td><code>enum: full, partial, clear, default</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>public_key</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Base64-encoded public key for encrypting payload logs. - Set to null or empty string to disable payload logging. - Set to a non-empty base64 string to enable payload logging with the given key. For customers with configurable payload masking feature rolled out: - If the field is missing, the existing setting will be kept. Note that this is different from setting to null or empty string. For all other customers: - If the field is missing, the existing setting will be cleared.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-payload-log-settings-1" class="status" data-status="2xx">200: Payload log settings</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failed-to-set-payload-log-settings">4XX: Failed to set payload log settings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="put-accountsaccount_iddlpsettings" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/dlp/settings</h3>
+<p>Operation ID: <code>dlp-settings-update</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>) or bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ai_context_analysis</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether AI context analysis is enabled at the account level.</td>
+</tr>
+<tr>
+<td><code>ocr</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether OCR is enabled at the account level.</td>
+</tr>
+<tr>
+<td><code>payload_logging</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-dlp-settings-2" class="status" data-status="2xx">200: DLP settings</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-failed-to-update-dlp-settings-1">4XX: Failed to update DLP settings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>enum: null</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: false</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

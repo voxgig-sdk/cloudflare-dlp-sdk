@@ -1,0 +1,39 @@
+{
+  "existing": {
+    "posture_api_create_webhook_job": {
+      "POSTURE_API_CREATE_WEBHOOK_JOB00": {
+        "finding_instance_ids": [],
+        "webhook_ids": [],
+        "account_id": "ACCOUNT01",
+        "id": "POSTURE_API_CREATE_WEBHOOK_JOB00"
+      },
+      "POSTURE_API_CREATE_WEBHOOK_JOB01": {
+        "finding_instance_ids": [],
+        "webhook_ids": [],
+        "account_id": "ACCOUNT01",
+        "id": "POSTURE_API_CREATE_WEBHOOK_JOB01"
+      },
+      "POSTURE_API_CREATE_WEBHOOK_JOB02": {
+        "finding_instance_ids": [],
+        "webhook_ids": [],
+        "account_id": "ACCOUNT01",
+        "id": "POSTURE_API_CREATE_WEBHOOK_JOB02"
+      }
+    }
+  },
+  "new": {
+    "posture_api_create_webhook_job": {
+      "posture_api_create_webhook_job_ref01": {
+        "finding_instance_ids": [],
+        "webhook_ids": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/webhooks/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

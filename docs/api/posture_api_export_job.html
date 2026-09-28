@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>PostureApiExportJob | Cloudflare DLP</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare DLP<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-dlp-sdk">voxgig-sdk/cloudflare-dlp-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare DLP</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/dlp_custom_prompt_topic.html">DlpCustomPromptTopic</a>
+<a href="../api/dlp_data_class.html">DlpDataClass</a>
+<a href="../api/dlp_data_tag.html">DlpDataTag</a>
+<a href="../api/dlp_data_tag_category.html">DlpDataTagCategory</a>
+<a href="../api/dlp_data_tag_category_template.html">DlpDataTagCategoryTemplate</a>
+<a href="../api/dlp_dataset.html">DlpDataset</a>
+<a href="../api/dlp_document_fingerprint.html">DlpDocumentFingerprint</a>
+<a href="../api/dlp_email.html">DlpEmail</a>
+<a href="../api/dlp_entry.html">DlpEntry</a>
+<a href="../api/dlp_integration_entry.html">DlpIntegrationEntry</a>
+<a href="../api/dlp_predefined_entry.html">DlpPredefinedEntry</a>
+<a href="../api/dlp_profile.html">DlpProfile</a>
+<a href="../api/dlp_sensitivity_group.html">DlpSensitivityGroup</a>
+<a href="../api/dlp_sensitivity_group_template.html">DlpSensitivityGroupTemplate</a>
+<a href="../api/dlp_sensitivity_level.html">DlpSensitivityLevel</a>
+<a href="../api/dlp_setting.html">DlpSetting</a>
+<a href="../api/policy.html">Policy</a>
+<a href="../api/posture_api_create_remediation_job.html">PostureApiCreateRemediationJob</a>
+<a href="../api/posture_api_create_webhook_job.html">PostureApiCreateWebhookJob</a>
+<a aria-current="page" href="../api/posture_api_export_job.html">PostureApiExportJob</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_iddata-securityposturefindingsstorage_namespace_idinstancesexport">POST /accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export</a>
+<a class="nav-section" href="#post-accountsaccount_iddata-securityposturecontentexport">POST /accounts/{account_id}/data-security/posture/content/export</a>
+<a class="nav-section" href="#post-accountsaccount_iddata-securityposturefindingsexport">POST /accounts/{account_id}/data-security/posture/findings/export</a>
+<a class="nav-section" href="#post-accountsaccount_iddata-securitypostureremediationsjobsexport">POST /accounts/{account_id}/data-security/posture/remediations/jobs/export</a>
+<a class="nav-section" href="#get-accountsaccount_iddata-securitypostureexportsid">GET /accounts/{account_id}/data-security/posture/exports/{id}</a></div>
+<a href="../api/posture_api_finding.html">PostureApiFinding</a>
+<a href="../api/posture_api_finding_instance.html">PostureApiFindingInstance</a>
+<a href="../api/posture_api_finding_type.html">PostureApiFindingType</a>
+<a href="../api/posture_api_paginated_content_asset_list.html">PostureApiPaginatedContentAssetList</a>
+<a href="../api/posture_api_paginated_export_job_list.html">PostureApiPaginatedExportJobList</a>
+<a href="../api/posture_api_paginated_finding_instance_list.html">PostureApiPaginatedFindingInstanceList</a>
+<a href="../api/posture_api_paginated_finding_list.html">PostureApiPaginatedFindingList</a>
+<a href="../api/posture_api_paginated_finding_type_list.html">PostureApiPaginatedFindingTypeList</a>
+<a href="../api/posture_api_paginated_remediation_job_list.html">PostureApiPaginatedRemediationJobList</a>
+<a href="../api/posture_api_paginated_remediation_type_list.html">PostureApiPaginatedRemediationTypeList</a>
+<a href="../api/posture_api_webhook.html">PostureApiWebhook</a>
+<a href="../api/posture_api_webhook_list.html">PostureApiWebhookList</a>
+<a href="../api/webhook.html">Webhook</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="postureapiexportjob">PostureApiExportJob</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddata-securityposturefindingsstorage_namespace_idinstancesexport"><code>/accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export</code></a></td>
+<td><code>create</code></td>
+<td>OK: Successful HTTP request</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddata-securityposturecontentexport"><code>/accounts/{account_id}/data-security/posture/content/export</code></a></td>
+<td><code>create</code></td>
+<td>OK: Successful HTTP request</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddata-securityposturefindingsexport"><code>/accounts/{account_id}/data-security/posture/findings/export</code></a></td>
+<td><code>create</code></td>
+<td>OK: Successful HTTP request</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_iddata-securitypostureremediationsjobsexport"><code>/accounts/{account_id}/data-security/posture/remediations/jobs/export</code></a></td>
+<td><code>create</code></td>
+<td>OK: Successful HTTP request</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_iddata-securitypostureexportsid"><code>/accounts/{account_id}/data-security/posture/exports/{id}</code></a></td>
+<td><code>load</code></td>
+<td>OK: Successful HTTP request</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">posture_api_export_job, err := client.PostureApiExportJob(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(posture_api_export_job)
+created, err := client.PostureApiExportJob(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;dlp_profile_information&quot;: []any{}, &quot;errors&quot;: []any{}, &quot;messages&quot;: []any{}, &quot;result&quot;: map[string]any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local posture_api_export_job, err = client:PostureApiExportJob():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:PostureApiExportJob():create({ account_id = &quot;example&quot;, dlp_profile_information = {}, errors = {}, messages = {}, result = {}, success = true })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$posture_api_export_job = $client-&gt;PostureApiExportJob()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;PostureApiExportJob()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dlp_profile_information&quot; =&gt; [], &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;result&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">posture_api_export_job = client.PostureApiExportJob().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.PostureApiExportJob().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;dlp_profile_information&quot;: [], &quot;errors&quot;: [], &quot;messages&quot;: [], &quot;result&quot;: {}, &quot;success&quot;: True })
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">posture_api_export_job = client.PostureApiExportJob.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.PostureApiExportJob.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dlp_profile_information&quot; =&gt; [], &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;result&quot; =&gt; {}, &quot;success&quot; =&gt; true })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const posture_api_export_job = await client.PostureApiExportJob().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.PostureApiExportJob().create({ account_id: &quot;example&quot;, dlp_profile_information: [], errors: [], messages: [], result: {}, success: true })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>archived</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Filter for archived status.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_id</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Filter by DLP profile IDs.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>DLP profile metadata for the export.</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>ignored</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Filter for only the ignored findings.</td>
+</tr>
+<tr>
+<td><code>integration_id</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Filter by integration IDs.</td>
+</tr>
+<tr>
+<td><code>max_affliction_date</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Filter to view findings that occurred on or before the affliction date.</td>
+</tr>
+<tr>
+<td><code>max_updated_at</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Filter to view remediation jobs updated on or before this datetime.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>min_affliction_date</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Filter to view findings that occurred on or after the affliction date.</td>
+</tr>
+<tr>
+<td><code>min_updated_at</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Filter to view remediation jobs updated on or after this datetime.</td>
+</tr>
+<tr>
+<td><code>orders</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Ordering specifications for the export.</td>
+</tr>
+<tr>
+<td><code>product</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Filter by finding's category product.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Information about an export job.</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A search term.</td>
+</tr>
+<tr>
+<td><code>severities</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Filter by severity levels.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Filter by remediation job status.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+<tr>
+<td><code>vendors</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Filter by vendor types.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_iddata-securityposturefindingsstorage_namespace_idinstancesexport" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export</h3>
+<p>Operation ID: <code>CreateFindingInstancesExportCSV</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID for the user making the request. |
+| <code>storage_namespace_id</code> | <code>path</code> | <code>string</code> | Yes | Identifies the finding whose instances to export, in the form <code>&amp;lt;</code>integration_id<code>&amp;gt;-&amp;lt;</code>finding_type_id<code>&amp;gt;</code>. Take <code>integration.id</code> and <code>finding.id</code> from the finding in the List posture findings response and join them with a hyphen. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>archived</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Filter for archived status.</td>
+</tr>
+<tr>
+<td><code>max_affliction_date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view findings that occurred on or before the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.</td>
+</tr>
+<tr>
+<td><code>min_affliction_date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view findings that occurred on or after the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.</td>
+</tr>
+<tr>
+<td><code>orders</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Ordering specifications for the export.</td>
+</tr>
+<tr>
+<td><code>orders[].direction</code></td>
+<td><code>enum: asc, desc</code></td>
+<td>Yes</td>
+<td>Sort direction.</td>
+</tr>
+<tr>
+<td><code>orders[].name</code></td>
+<td><code>enum: asset.name, affliction_date</code></td>
+<td>Yes</td>
+<td>Which field to use when ordering the finding instances.</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A search term.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-ok-successful-http-request" class="status" data-status="2xx">200: OK: Successful HTTP request</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="400-bad-request-invalid-request-parameters" class="status" data-status="4xx">400: Bad Request: Invalid request parameters</h5>
+<h5 id="404-not-found-finding-not-found" class="status" data-status="4xx">404: Not Found: Finding not found</h5>
+<h3 id="post-accountsaccount_iddata-securityposturecontentexport" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/data-security/posture/content/export</h3>
+<p>Operation ID: <code>CreateContentExport</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID for the user making the request. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dlp_profile_id</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Filter by DLP profile IDs.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>DLP profile metadata for the export.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information[].entries</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Entries contained within this DLP profile.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information[].entries[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the DLP profile entry.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information[].entries[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the DLP profile entry.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information[].entries[].profile_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>ID of the parent DLP profile.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Unique identifier for the DLP profile.</td>
+</tr>
+<tr>
+<td><code>dlp_profile_information[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the DLP profile.</td>
+</tr>
+<tr>
+<td><code>integration_id</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Filter by integration IDs.</td>
+</tr>
+<tr>
+<td><code>max_affliction_date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view content flagged on or before this date.</td>
+</tr>
+<tr>
+<td><code>min_affliction_date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view content flagged on or after this date.</td>
+</tr>
+<tr>
+<td><code>orders</code></td>
+<td><code>array of object and object</code></td>
+<td>No</td>
+<td>Ordering specifications for the export.</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Search term to filter content.</td>
+</tr>
+<tr>
+<td><code>vendors</code></td>
+<td><code>array of enum: ANTHROPIC, AWS, BITBUCKET, BOX, CONFLUENCE, DROPBOX, ...</code></td>
+<td>No</td>
+<td>Filter by vendor types.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-ok-successful-http-request-1" class="status" data-status="2xx">200: OK: Successful HTTP request</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="400-bad-request-invalid-request-parameters-1" class="status" data-status="4xx">400: Bad Request: Invalid request parameters</h5>
+<h3 id="post-accountsaccount_iddata-securityposturefindingsexport" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/data-security/posture/findings/export</h3>
+<p>Operation ID: <code>CreateFindingExportCSV</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID for the user making the request. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ignored</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Filter for only the ignored findings. Set to false to only see active items.</td>
+</tr>
+<tr>
+<td><code>integration_id</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Filter by multiple integration IDs.</td>
+</tr>
+<tr>
+<td><code>max_affliction_date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view findings that occurred on or before the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.</td>
+</tr>
+<tr>
+<td><code>min_affliction_date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view findings that occurred on or after the affliction date. Can be a date-time in ISO 8601 format or an epoch timestamp.</td>
+</tr>
+<tr>
+<td><code>orders</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Which fields to use when ordering the findings.</td>
+</tr>
+<tr>
+<td><code>orders[].direction</code></td>
+<td><code>enum: asc, desc</code></td>
+<td>Yes</td>
+<td>Sort direction.</td>
+</tr>
+<tr>
+<td><code>orders[].name</code></td>
+<td><code>enum: instance_count, finding.name, integration.name, latest_affliction_date, severity</code></td>
+<td>Yes</td>
+<td>Which field to use when ordering the findings.</td>
+</tr>
+<tr>
+<td><code>product</code></td>
+<td><code>enum: SaaS, Cloud or enum: null</code></td>
+<td>No</td>
+<td>Filter by finding's category product.</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A search term.</td>
+</tr>
+<tr>
+<td><code>severities</code></td>
+<td><code>array of enum: CRITICAL, HIGH, MEDIUM, LOW</code></td>
+<td>No</td>
+<td>Filter by severity levels.</td>
+</tr>
+<tr>
+<td><code>vendors</code></td>
+<td><code>array of enum: ANTHROPIC, AWS, BITBUCKET, BOX, CONFLUENCE, DROPBOX, ...</code></td>
+<td>No</td>
+<td>Filter by vendor types.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-ok-successful-http-request-2" class="status" data-status="2xx">200: OK: Successful HTTP request</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="400-bad-request-invalid-request-parameters-2" class="status" data-status="4xx">400: Bad Request: Invalid request parameters</h5>
+<h3 id="post-accountsaccount_iddata-securitypostureremediationsjobsexport" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/data-security/posture/remediations/jobs/export</h3>
+<p>Operation ID: <code>CreateRemediationJobsExportCSV</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID for the user making the request. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>integration_id</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Filter by multiple integration IDs.</td>
+</tr>
+<tr>
+<td><code>max_updated_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view remediation jobs updated on or before this datetime. Can be a date-time in ISO 8601 format or an epoch timestamp.</td>
+</tr>
+<tr>
+<td><code>min_updated_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Filter to view remediation jobs updated on or after this datetime. Can be a date-time in ISO 8601 format or an epoch timestamp.</td>
+</tr>
+<tr>
+<td><code>orders</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Ordering specifications for the export.</td>
+</tr>
+<tr>
+<td><code>orders[].direction</code></td>
+<td><code>enum: asc, desc</code></td>
+<td>Yes</td>
+<td>Sort direction.</td>
+</tr>
+<tr>
+<td><code>orders[].name</code></td>
+<td><code>enum: asset_name, finding_type_name, integration_name, status, last_updated_at, affliction_date</code></td>
+<td>Yes</td>
+<td>Which field to use when ordering the remediation jobs.</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>A search term.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>array of enum: pending, processing, completed, failed, validating</code></td>
+<td>No</td>
+<td>Filter by remediation job status.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-ok-successful-http-request-3" class="status" data-status="2xx">200: OK: Successful HTTP request</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="400-bad-request-invalid-request-parameters-3" class="status" data-status="4xx">400: Bad Request: Invalid request parameters</h5>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_iddata-securitypostureexportsid" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/data-security/posture/exports/{id}</h3>
+<p>Operation ID: <code>GetExportJob</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID for the user making the request. |
+| <code>id</code> | <code>path</code> | <code>string</code> | Yes | Unique identifier for the export job |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-ok-successful-http-request-4" class="status" data-status="2xx">200: OK: Successful HTTP request</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="400-bad-request-invalid-request-parameters-4" class="status" data-status="4xx">400: Bad Request: Invalid request parameters</h5>
+<h5 id="404-not-found-export-job-not-found" class="status" data-status="4xx">404: Not Found: Export job not found</h5>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

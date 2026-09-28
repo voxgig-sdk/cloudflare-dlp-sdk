@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Python | Cloudflare DLP</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare DLP<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-dlp-sdk">voxgig-sdk/cloudflare-dlp-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare DLP</a></details>
+<details><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/dlp_custom_prompt_topic.html">DlpCustomPromptTopic</a>
+<a href="../api/dlp_data_class.html">DlpDataClass</a>
+<a href="../api/dlp_data_tag.html">DlpDataTag</a>
+<a href="../api/dlp_data_tag_category.html">DlpDataTagCategory</a>
+<a href="../api/dlp_data_tag_category_template.html">DlpDataTagCategoryTemplate</a>
+<a href="../api/dlp_dataset.html">DlpDataset</a>
+<a href="../api/dlp_document_fingerprint.html">DlpDocumentFingerprint</a>
+<a href="../api/dlp_email.html">DlpEmail</a>
+<a href="../api/dlp_entry.html">DlpEntry</a>
+<a href="../api/dlp_integration_entry.html">DlpIntegrationEntry</a>
+<a href="../api/dlp_predefined_entry.html">DlpPredefinedEntry</a>
+<a href="../api/dlp_profile.html">DlpProfile</a>
+<a href="../api/dlp_sensitivity_group.html">DlpSensitivityGroup</a>
+<a href="../api/dlp_sensitivity_group_template.html">DlpSensitivityGroupTemplate</a>
+<a href="../api/dlp_sensitivity_level.html">DlpSensitivityLevel</a>
+<a href="../api/dlp_setting.html">DlpSetting</a>
+<a href="../api/policy.html">Policy</a>
+<a href="../api/posture_api_create_remediation_job.html">PostureApiCreateRemediationJob</a>
+<a href="../api/posture_api_create_webhook_job.html">PostureApiCreateWebhookJob</a>
+<a href="../api/posture_api_export_job.html">PostureApiExportJob</a>
+<a href="../api/posture_api_finding.html">PostureApiFinding</a>
+<a href="../api/posture_api_finding_instance.html">PostureApiFindingInstance</a>
+<a href="../api/posture_api_finding_type.html">PostureApiFindingType</a>
+<a href="../api/posture_api_paginated_content_asset_list.html">PostureApiPaginatedContentAssetList</a>
+<a href="../api/posture_api_paginated_export_job_list.html">PostureApiPaginatedExportJobList</a>
+<a href="../api/posture_api_paginated_finding_instance_list.html">PostureApiPaginatedFindingInstanceList</a>
+<a href="../api/posture_api_paginated_finding_list.html">PostureApiPaginatedFindingList</a>
+<a href="../api/posture_api_paginated_finding_type_list.html">PostureApiPaginatedFindingTypeList</a>
+<a href="../api/posture_api_paginated_remediation_job_list.html">PostureApiPaginatedRemediationJobList</a>
+<a href="../api/posture_api_paginated_remediation_type_list.html">PostureApiPaginatedRemediationTypeList</a>
+<a href="../api/posture_api_webhook.html">PostureApiWebhook</a>
+<a href="../api/posture_api_webhook_list.html">PostureApiWebhookList</a>
+<a href="../api/webhook.html">Webhook</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details open><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a aria-current="page" href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>SDKs</div><h1 id="python">Python</h1>
+<p>Python</p>
+<h2 id="install">Install</h2>
+<p>Not published. Build from the py directory.</p>
+<h2 id="package">Package</h2>
+<p><code>voxgig-sdk-cloudflare-dlp-sdk</code></p>
+<h2 id="api-reference">API reference</h2>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/dlp_custom_prompt_topic.html">DlpCustomPromptTopic</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_data_class.html">DlpDataClass</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_data_tag.html">DlpDataTag</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_data_tag_category.html">DlpDataTagCategory</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_data_tag_category_template.html">DlpDataTagCategoryTemplate</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_dataset.html">DlpDataset</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_document_fingerprint.html">DlpDocumentFingerprint</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_email.html">DlpEmail</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>patch</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_entry.html">DlpEntry</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_integration_entry.html">DlpIntegrationEntry</a></td>
+<td><code>create</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_predefined_entry.html">DlpPredefinedEntry</a></td>
+<td><code>create</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_profile.html">DlpProfile</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_sensitivity_group.html">DlpSensitivityGroup</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_sensitivity_group_template.html">DlpSensitivityGroupTemplate</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_sensitivity_level.html">DlpSensitivityLevel</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/dlp_setting.html">DlpSetting</a></td>
+<td><code>create</code>, <code>load</code>, <code>patch</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/policy.html">Policy</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_create_remediation_job.html">PostureApiCreateRemediationJob</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_create_webhook_job.html">PostureApiCreateWebhookJob</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_export_job.html">PostureApiExportJob</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_finding.html">PostureApiFinding</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_finding_instance.html">PostureApiFindingInstance</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_finding_type.html">PostureApiFindingType</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_paginated_content_asset_list.html">PostureApiPaginatedContentAssetList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_paginated_export_job_list.html">PostureApiPaginatedExportJobList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_paginated_finding_instance_list.html">PostureApiPaginatedFindingInstanceList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_paginated_finding_list.html">PostureApiPaginatedFindingList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_paginated_finding_type_list.html">PostureApiPaginatedFindingTypeList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_paginated_remediation_job_list.html">PostureApiPaginatedRemediationJobList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_paginated_remediation_type_list.html">PostureApiPaginatedRemediationTypeList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_webhook.html">PostureApiWebhook</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/posture_api_webhook_list.html">PostureApiWebhookList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/webhook.html">Webhook</a></td>
+<td><code>create</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration</h2>
+<p>Set the server URL and credentials for your environment. Enable only the features your application needs.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><a href="../features/test.html">Test transport</a></li>
+</ul>
+<h2 id="set-up-the-client">Set up the client</h2>
+<p>This setup fragment reads credentials from the environment. Use the API operation reference to supply input for each call.</p>
+<pre><code class="language-py">import os
+from cloudflare_dlp_sdk import CloudflareDlpSDK
+
+client = CloudflareDlpSDK({&quot;apikey&quot;: os.environ.get(&quot;CLOUDFLARE_DLP_APIKEY&quot;)})
+</code></pre>
+<h2 id="client-defaults">Client defaults</h2>
+<pre><code class="language-json">{
+  &quot;base&quot;: &quot;https://api.cloudflare.com/client/v4&quot;,
+  &quot;auth&quot;: {
+    &quot;prefix&quot;: &quot;&quot;
+  },
+  &quot;headers&quot;: {
+    &quot;content-type&quot;: &quot;application/json&quot;
+  },
+  &quot;entity&quot;: {
+    &quot;dlp_custom_prompt_topic&quot;: {},
+    &quot;dlp_data_class&quot;: {},
+    &quot;dlp_data_tag&quot;: {},
+    &quot;dlp_data_tag_category&quot;: {},
+    &quot;dlp_data_tag_category_template&quot;: {},
+    &quot;dlp_dataset&quot;: {},
+    &quot;dlp_document_fingerprint&quot;: {},
+    &quot;dlp_email&quot;: {},
+    &quot;dlp_entry&quot;: {},
+    &quot;dlp_integration_entry&quot;: {},
+    &quot;dlp_predefined_entry&quot;: {},
+    &quot;dlp_profile&quot;: {},
+    &quot;dlp_sensitivity_group&quot;: {},
+    &quot;dlp_sensitivity_group_template&quot;: {},
+    &quot;dlp_sensitivity_level&quot;: {},
+    &quot;dlp_setting&quot;: {},
+    &quot;policy&quot;: {},
+    &quot;posture_api_create_remediation_job&quot;: {},
+    &quot;posture_api_create_webhook_job&quot;: {},
+    &quot;posture_api_export_job&quot;: {},
+    &quot;posture_api_finding&quot;: {},
+    &quot;posture_api_finding_instance&quot;: {},
+    &quot;posture_api_finding_type&quot;: {},
+    &quot;posture_api_paginated_content_asset_list&quot;: {},
+    &quot;posture_api_paginated_export_job_list&quot;: {},
+    &quot;posture_api_paginated_finding_instance_list&quot;: {},
+    &quot;posture_api_paginated_finding_list&quot;: {},
+    &quot;posture_api_paginated_finding_type_list&quot;: {},
+    &quot;posture_api_paginated_remediation_job_list&quot;: {},
+    &quot;posture_api_paginated_remediation_type_list&quot;: {},
+    &quot;posture_api_webhook&quot;: {},
+    &quot;posture_api_webhook_list&quot;: {},
+    &quot;webhook&quot;: {}
+  }
+}
+</code></pre>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

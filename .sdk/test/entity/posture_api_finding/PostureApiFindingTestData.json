@@ -1,0 +1,78 @@
+{
+  "existing": {
+    "posture_api_finding": {
+      "POSTURE_API_FINDING00": {
+        "checks": [],
+        "errors": [],
+        "id": "POSTURE_API_FINDING00",
+        "messages": [],
+        "new_severity": 74,
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_FINDING01": {
+        "checks": [],
+        "errors": [],
+        "id": "POSTURE_API_FINDING01",
+        "messages": [],
+        "new_severity": 144,
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_FINDING02": {
+        "checks": [],
+        "errors": [],
+        "id": "POSTURE_API_FINDING02",
+        "messages": [],
+        "new_severity": 214,
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_finding": {
+      "posture_api_finding_ref01": {
+        "checks": [],
+        "errors": [],
+        "messages": [],
+        "new_severity": 284,
+        "result": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/findings/{finding_id}/reset_finding_severity": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/findings/{finding_id}/tune_finding_severity": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/findings/ignore": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/findings/unignore": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/data-security/posture/findings/{finding_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

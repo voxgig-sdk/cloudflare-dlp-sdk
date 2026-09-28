@@ -1,0 +1,71 @@
+{
+  "existing": {
+    "dlp_data_tag_category": {
+      "DLP_DATA_TAG_CATEGORY00": {
+        "description": "s3c",
+        "id": "DLP_DATA_TAG_CATEGORY00",
+        "name": "s3e",
+        "result": {},
+        "tags": [],
+        "template_id": "TEMPLATE01",
+        "account_id": "ACCOUNT01"
+      },
+      "DLP_DATA_TAG_CATEGORY01": {
+        "description": "s78",
+        "id": "DLP_DATA_TAG_CATEGORY01",
+        "name": "s7a",
+        "result": {},
+        "tags": [],
+        "template_id": "TEMPLATE01",
+        "account_id": "ACCOUNT01"
+      },
+      "DLP_DATA_TAG_CATEGORY02": {
+        "description": "sb4",
+        "id": "DLP_DATA_TAG_CATEGORY02",
+        "name": "sb6",
+        "result": {},
+        "tags": [],
+        "template_id": "TEMPLATE01",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "dlp_data_tag_category": {
+      "dlp_data_tag_category_ref01": {
+        "description": "sf0",
+        "name": "sf2",
+        "result": {},
+        "tags": [],
+        "template_id": "TEMPLATE01"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/data_tag_categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/data_tag_categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/data_tag_categories/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/data_tag_categories/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/data_tag_categories/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

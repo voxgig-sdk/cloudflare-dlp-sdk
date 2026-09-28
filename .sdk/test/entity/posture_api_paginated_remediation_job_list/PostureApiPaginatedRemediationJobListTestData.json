@@ -1,0 +1,83 @@
+{
+  "existing": {
+    "posture_api_paginated_remediation_job_list": {
+      "POSTURE_API_PAGINATED_REMEDIATION_JOB_LIST00": {
+        "asset": {},
+        "created_at": "s8d",
+        "finding_id": "FINDING01",
+        "finding_instance_id": "FINDING_INSTANCE01",
+        "finding_type_id": "FINDING_TYPE01",
+        "finding_type_name": "s91",
+        "id": "POSTURE_API_PAGINATED_REMEDIATION_JOB_LIST00",
+        "integration_name": "s93",
+        "last_updated": "s94",
+        "remediation_type": "s95",
+        "status": "s96",
+        "triggered_by_actor": "s97",
+        "triggered_by_id": "TRIGGERED_BY01",
+        "triggered_by_user": "s99",
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_PAGINATED_REMEDIATION_JOB_LIST01": {
+        "asset": {},
+        "created_at": "s119",
+        "finding_id": "FINDING01",
+        "finding_instance_id": "FINDING_INSTANCE01",
+        "finding_type_id": "FINDING_TYPE01",
+        "finding_type_name": "s11d",
+        "id": "POSTURE_API_PAGINATED_REMEDIATION_JOB_LIST01",
+        "integration_name": "s11f",
+        "last_updated": "s120",
+        "remediation_type": "s121",
+        "status": "s122",
+        "triggered_by_actor": "s123",
+        "triggered_by_id": "TRIGGERED_BY01",
+        "triggered_by_user": "s125",
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_PAGINATED_REMEDIATION_JOB_LIST02": {
+        "asset": {},
+        "created_at": "s1a5",
+        "finding_id": "FINDING01",
+        "finding_instance_id": "FINDING_INSTANCE01",
+        "finding_type_id": "FINDING_TYPE01",
+        "finding_type_name": "s1a9",
+        "id": "POSTURE_API_PAGINATED_REMEDIATION_JOB_LIST02",
+        "integration_name": "s1ab",
+        "last_updated": "s1ac",
+        "remediation_type": "s1ad",
+        "status": "s1ae",
+        "triggered_by_actor": "s1af",
+        "triggered_by_id": "TRIGGERED_BY01",
+        "triggered_by_user": "s1b1",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_paginated_remediation_job_list": {
+      "posture_api_paginated_remediation_job_list_ref01": {
+        "asset": {},
+        "created_at": "s231",
+        "finding_id": "FINDING01",
+        "finding_instance_id": "FINDING_INSTANCE01",
+        "finding_type_id": "FINDING_TYPE01",
+        "finding_type_name": "s235",
+        "integration_name": "s237",
+        "last_updated": "s238",
+        "remediation_type": "s239",
+        "status": "s23a",
+        "triggered_by_actor": "s23b",
+        "triggered_by_id": "TRIGGERED_BY01",
+        "triggered_by_user": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/data-security/posture/remediations/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

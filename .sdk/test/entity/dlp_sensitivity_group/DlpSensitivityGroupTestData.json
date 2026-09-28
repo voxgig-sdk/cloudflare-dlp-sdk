@@ -1,0 +1,84 @@
+{
+  "existing": {
+    "dlp_sensitivity_group": {
+      "DLP_SENSITIVITY_GROUP00": {
+        "description": "s3c",
+        "id": "DLP_SENSITIVITY_GROUP00",
+        "levels": [],
+        "name": "s3f",
+        "result": {},
+        "template_id": "TEMPLATE01",
+        "account_id": "ACCOUNT01",
+        "sensitivity_group_id": "SENSITIVITY_GROUP01"
+      },
+      "DLP_SENSITIVITY_GROUP01": {
+        "description": "s78",
+        "id": "DLP_SENSITIVITY_GROUP01",
+        "levels": [],
+        "name": "s7b",
+        "result": {},
+        "template_id": "TEMPLATE01",
+        "account_id": "ACCOUNT01",
+        "sensitivity_group_id": "SENSITIVITY_GROUP01"
+      },
+      "DLP_SENSITIVITY_GROUP02": {
+        "description": "sb4",
+        "id": "DLP_SENSITIVITY_GROUP02",
+        "levels": [],
+        "name": "sb7",
+        "result": {},
+        "template_id": "TEMPLATE01",
+        "account_id": "ACCOUNT01",
+        "sensitivity_group_id": "SENSITIVITY_GROUP01"
+      }
+    }
+  },
+  "new": {
+    "dlp_sensitivity_group": {
+      "dlp_sensitivity_group_ref01": {
+        "description": "sf0",
+        "levels": [],
+        "name": "sf3",
+        "result": {},
+        "template_id": "TEMPLATE01"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/sensitivity_groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/sensitivity_groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,425 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 33
+  metrics: count: path: 75
+  metrics: count: method: 129
+
+  entity: dlp_custom_prompt_topic: {
+    path: "/accounts/{account_id}/dlp/custom_prompt_topics": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}": {
+      rename: param: "entry_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_data_class: {
+    path: "/accounts/{account_id}/dlp/data_classes": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/data_classes/{data_class_id}": {
+      rename: param: "data_class_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_data_tag: {
+    path: "/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags": {
+      rename: param: "category_id": *"data_tag_category_id"
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/data_tag_categories/{category_id}/data_tags/{tag_id}": {
+      rename: param: "category_id": *"data_tag_category_id"
+      rename: param: "tag_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_data_tag_category: {
+    path: "/accounts/{account_id}/dlp/data_tag_categories": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/data_tag_categories/{category_id}": {
+      rename: param: "category_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_data_tag_category_template: {
+    path: "/accounts/{account_id}/dlp/data_tag_category_templates": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/data_tag_category_templates/{template_id}": {
+      rename: param: "template_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: dlp_dataset: {
+    path: "/accounts/{account_id}/dlp/datasets": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/datasets/{dataset_id}": {
+      rename: param: "dataset_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/datasets/{dataset_id}/upload": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dlp/datasets/{dataset_id}/upload/{version}": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dlp/datasets/{dataset_id}/versions/{version}/entries/{entry_id}": {
+      rename: param: "version": *"version_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: dlp_document_fingerprint: {
+    path: "/accounts/{account_id}/dlp/document_fingerprints": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}": {
+      rename: param: "document_fingerprint_id": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_email: {
+    path: "/accounts/{account_id}/dlp/email/account_mapping": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/email/rules": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/dlp/email/rules/{rule_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_entry: {
+    path: "/accounts/{account_id}/dlp/entries": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/entries/custom/{entry_id}": {
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/entries/predefined/{entry_id}": {
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/entries/{entry_id}": {
+      rename: param: "entry_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_integration_entry: {
+    path: "/accounts/{account_id}/dlp/entries/integration": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dlp/entries/integration/{entry_id}": {
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_predefined_entry: {
+    path: "/accounts/{account_id}/dlp/entries/predefined": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dlp/entries/predefined/{entry_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: dlp_profile: {
+    path: "/accounts/{account_id}/dlp/profiles": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/profiles/custom": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/profiles/custom/{profile_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/profiles/predefined": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config": {
+      action: "config": {}
+      rename: param: "profile_id": *"predefined_id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/profiles/{profile_id}": {
+      rename: param: "profile_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: dlp_sensitivity_group: {
+    path: "/accounts/{account_id}/dlp/sensitivity_groups": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}": {
+      rename: param: "sensitivity_group_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/level_order": {
+      action: "level_order": {}
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_sensitivity_group_template: {
+    path: "/accounts/{account_id}/dlp/sensitivity_groups/templates": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/sensitivity_groups/templates/{template_id}": {
+      rename: param: "template_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: dlp_sensitivity_level: {
+    path: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/sensitivity_groups/{sensitivity_group_id}/levels/{sensitivity_level_id}": {
+      rename: param: "sensitivity_level_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: dlp_setting: {
+    path: "/accounts/{account_id}/dlp/limits": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/dlp/patterns/validate": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/dlp/payload_log": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/dlp/settings": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: policy: {
+    path: "/accounts/{account_id}/data-security/posture/policies": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/data-security/posture/policies/logs": {
+      action: "log": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/data-security/posture/policies/{policy_id}": {
+      rename: param: "policy_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: posture_api_create_remediation_job: {
+    path: "/accounts/{account_id}/data-security/posture/remediations/jobs": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: posture_api_create_webhook_job: {
+    path: "/accounts/{account_id}/data-security/posture/webhooks/jobs": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: posture_api_export_job: {
+    path: "/accounts/{account_id}/data-security/posture/content/export": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/exports/{id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/export": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/{storage_namespace_id}/instances/export": {
+      rename: param: "storage_namespace_id": *"finding_id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/remediations/jobs/export": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: posture_api_finding: {
+    path: "/accounts/{account_id}/data-security/posture/findings/ignore": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/unignore": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/{finding_id}": {
+      rename: param: "finding_id": *"id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/reset_finding_severity": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/tune_finding_severity": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: posture_api_finding_instance: {
+    path: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/archive": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/unarchive": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/{instance_id}": {
+      rename: param: "instance_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: posture_api_finding_type: {
+    path: "/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}": {
+      rename: param: "finding_type_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: posture_api_paginated_content_asset_list: {
+    path: "/accounts/{account_id}/data-security/posture/content": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: posture_api_paginated_export_job_list: {
+    path: "/accounts/{account_id}/data-security/posture/exports": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: posture_api_paginated_finding_instance_list: {
+    path: "/accounts/{account_id}/data-security/posture/findings/{finding_id}/instances": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: posture_api_paginated_finding_list: {
+    path: "/accounts/{account_id}/data-security/posture/findings": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: posture_api_paginated_finding_type_list: {
+    path: "/accounts/{account_id}/data-security/posture/finding_types": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: posture_api_paginated_remediation_job_list: {
+    path: "/accounts/{account_id}/data-security/posture/remediations/jobs": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: posture_api_paginated_remediation_type_list: {
+    path: "/accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}/remediation_types": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: posture_api_webhook: {
+    path: "/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}": {
+      rename: param: "webhook_id": *"id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}/evaluate": {
+      action: "evaluate": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: posture_api_webhook_list: {
+    path: "/accounts/{account_id}/data-security/posture/webhooks": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: webhook: {
+    path: "/accounts/{account_id}/data-security/posture/webhooks": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/webhooks/evaluate": {
+      action: "evaluate": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/data-security/posture/webhooks/{webhook_id}": {
+      rename: param: "webhook_id": *"id"
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+}

@@ -1,0 +1,75 @@
+{
+  "existing": {
+    "dlp_custom_prompt_topic": {
+      "DLP_CUSTOM_PROMPT_TOPIC00": {
+        "description": "s46",
+        "enabled": false,
+        "id": "DLP_CUSTOM_PROMPT_TOPIC00",
+        "name": "s49",
+        "profile_id": "PROFILE01",
+        "result": {},
+        "topic": "s4c",
+        "account_id": "ACCOUNT01"
+      },
+      "DLP_CUSTOM_PROMPT_TOPIC01": {
+        "description": "s8c",
+        "enabled": false,
+        "id": "DLP_CUSTOM_PROMPT_TOPIC01",
+        "name": "s8f",
+        "profile_id": "PROFILE01",
+        "result": {},
+        "topic": "s92",
+        "account_id": "ACCOUNT01"
+      },
+      "DLP_CUSTOM_PROMPT_TOPIC02": {
+        "description": "sd2",
+        "enabled": false,
+        "id": "DLP_CUSTOM_PROMPT_TOPIC02",
+        "name": "sd5",
+        "profile_id": "PROFILE01",
+        "result": {},
+        "topic": "sd8",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "dlp_custom_prompt_topic": {
+      "dlp_custom_prompt_topic_ref01": {
+        "description": "s118",
+        "enabled": false,
+        "name": "s11b",
+        "profile_id": "PROFILE01",
+        "result": {},
+        "topic": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/custom_prompt_topics": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/custom_prompt_topics": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/custom_prompt_topics/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

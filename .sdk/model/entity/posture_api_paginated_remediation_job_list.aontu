@@ -1,0 +1,279 @@
+# Entity: posture_api_paginated_remediation_job_list
+
+main: kit: entity: posture_api_paginated_remediation_job_list: {
+
+  alias: field: {}
+
+  fields: {
+    asset: {
+      h: "Asset"
+      n: "asset"
+      r: true
+      sh: "Asset information for a remediation job."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 5
+      }
+    }
+    created_at: {
+      fo: "date-time"
+      h: "Created At"
+      n: "created_at"
+      r: true
+      sh: "When the remediation job was created."
+      t: "`$STRING`"
+    }
+    finding_id: {
+      h: "Finding Id"
+      n: "finding_id"
+      r: true
+      sh: "Encoded finding ID."
+      t: "`$STRING`"
+    }
+    finding_instance_id: {
+      fo: "uuid"
+      h: "Finding Instance Id"
+      n: "finding_instance_id"
+      r: true
+      sh: "ID of the finding instance being remediated."
+      t: "`$STRING`"
+    }
+    finding_type_id: {
+      fo: "uuid"
+      h: "Finding Type Id"
+      n: "finding_type_id"
+      r: true
+      sh: "ID of the finding type."
+      t: "`$STRING`"
+    }
+    finding_type_name: {
+      h: "Finding Type Name"
+      n: "finding_type_name"
+      r: true
+      sh: "Name of the finding type."
+      t: "`$STRING`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the remediation job."
+      t: "`$STRING`"
+    }
+    integration_name: {
+      h: "Integration Name"
+      n: "integration_name"
+      r: true
+      sh: "Name of the integration."
+      t: "`$STRING`"
+    }
+    last_updated: {
+      fo: "date-time"
+      h: "Last Updated"
+      n: "last_updated"
+      r: true
+      sh: "When the remediation job was last updated."
+      t: "`$STRING`"
+    }
+    remediation_type: {
+      h: "Remediation Type"
+      n: "remediation_type"
+      r: true
+      sh: "Type of remediation being performed."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of a remediation job."
+      t: "`$STRING`"
+    }
+    triggered_by_actor: {
+      h: "Triggered By Actor"
+      n: "triggered_by_actor"
+      r: false
+      sh: "Type of actor that triggered the remediation job."
+      t: "`$STRING`"
+    }
+    triggered_by_id: {
+      h: "Triggered By Id"
+      n: "triggered_by_id"
+      r: false
+      sh: "ID of the actor that triggered the job."
+      t: "`$STRING`"
+    }
+    triggered_by_user: {
+      h: "Triggered By User"
+      n: "triggered_by_user"
+      r: true
+      sh: "Email of the user who triggered the remediation."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "posture_api_paginated_remediation_job_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/data-security/posture/remediations/jobs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "integration_id"
+                or: "integration_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "max_updated_at"
+                or: "max_updated_at"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "min_updated_at"
+                or: "min_updated_at"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "pending"
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: [
+                  "user"
+                  "account_token"
+                ]
+                k: "query"
+                n: "triggered_by_actor"
+                or: "triggered_by_actor"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/data-security/posture/remediations/jobs"
+          q: {
+            exist: [
+              "account_id"
+              "cursor"
+              "direction"
+              "integration_id"
+              "max_updated_at"
+              "min_updated_at"
+              "order"
+              "page"
+              "per_page"
+              "search"
+              "status"
+              "triggered_by_actor"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "remediations"
+            }
+            {
+              lit: "jobs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

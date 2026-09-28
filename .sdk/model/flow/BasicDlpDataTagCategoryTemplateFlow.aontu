@@ -1,0 +1,49 @@
+# BasicDlpDataTagCategoryTemplateFlow
+
+main: kit: flow: BasicDlpDataTagCategoryTemplateFlow:
+{
+  entity: "dlp_data_tag_category_template",
+  kind: "basic",
+  name: "BasicDlpDataTagCategoryTemplateFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "dlp_data_tag_category_template_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "dlp_data_tag_category_template_ref01",
+        srcdatavar: "dlp_data_tag_category_template_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "dlp_data_tag_category_template01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-dlp_data_tag_category_template_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDlpDataTagCategoryTemplateFlow"
+}

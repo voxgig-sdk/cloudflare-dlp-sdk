@@ -1,0 +1,233 @@
+# Entity: posture_api_paginated_finding_list
+
+main: kit: entity: posture_api_paginated_finding_list: {
+
+  alias: field: {}
+
+  fields: {
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: false
+      sh: "Array of finding objects."
+      t: "`$ARRAY`"
+    }
+    result_info: {
+      h: "Result Info"
+      n: "result_info"
+      r: true
+      sh: "Pagination and result information."
+      t: "`$OBJECT`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "posture_api_paginated_finding_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/data-security/posture/findings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "46148281d8a93d002ef242d8b0d5f9f6"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "1bd08189-9871-43f9-b838-60338d1d2a15,d7446a0d-da76-4f05-9659-803d78b27b7d"
+                k: "query"
+                n: "finding_type_id"
+                or: "finding_type_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ignored"
+                or: "ignored"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "integration_id"
+                or: "integration_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "max_affliction_date"
+                or: "max_affliction_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "min_affliction_date"
+                or: "min_affliction_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "observation"
+                or: "observation"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "product"
+                or: "product"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "severity"
+                or: "severity"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "GOOGLE_WORKSPACE"
+                k: "query"
+                n: "vendor"
+                or: "vendor"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/data-security/posture/findings"
+          q: {
+            exist: [
+              "account_id"
+              "cursor"
+              "direction"
+              "finding_type_id"
+              "ignored"
+              "integration_id"
+              "max_affliction_date"
+              "min_affliction_date"
+              "observation"
+              "order"
+              "page"
+              "per_page"
+              "product"
+              "search"
+              "severity"
+              "type"
+              "vendor"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "data-security"
+            }
+            {
+              lit: "posture"
+            }
+            {
+              lit: "findings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "dlp_predefined_entry": {
+      "DLP_PREDEFINED_ENTRY00": {
+        "enabled": true,
+        "entry_id": "ENTRY01",
+        "profile_id": "PROFILE01",
+        "account_id": "ACCOUNT01",
+        "id": "DLP_PREDEFINED_ENTRY00"
+      },
+      "DLP_PREDEFINED_ENTRY01": {
+        "enabled": true,
+        "entry_id": "ENTRY01",
+        "profile_id": "PROFILE01",
+        "account_id": "ACCOUNT01",
+        "id": "DLP_PREDEFINED_ENTRY01"
+      },
+      "DLP_PREDEFINED_ENTRY02": {
+        "enabled": true,
+        "entry_id": "ENTRY01",
+        "profile_id": "PROFILE01",
+        "account_id": "ACCOUNT01",
+        "id": "DLP_PREDEFINED_ENTRY02"
+      }
+    }
+  },
+  "new": {
+    "dlp_predefined_entry": {
+      "dlp_predefined_entry_ref01": {
+        "enabled": true,
+        "entry_id": "ENTRY01",
+        "profile_id": "PROFILE01"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/entries/predefined": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/entries/predefined/{entry_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

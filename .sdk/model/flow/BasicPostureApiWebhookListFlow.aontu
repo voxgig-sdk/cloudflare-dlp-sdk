@@ -1,0 +1,26 @@
+# BasicPostureApiWebhookListFlow
+
+main: kit: flow: BasicPostureApiWebhookListFlow:
+{
+  entity: "posture_api_webhook_list",
+  kind: "basic",
+  name: "BasicPostureApiWebhookListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "posture_api_webhook_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPostureApiWebhookListFlow"
+}

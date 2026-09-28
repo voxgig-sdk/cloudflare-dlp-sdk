@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "dlp_sensitivity_group_template": {
+      "DLP_SENSITIVITY_GROUP_TEMPLATE00": {
+        "id": "DLP_SENSITIVITY_GROUP_TEMPLATE00",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "DLP_SENSITIVITY_GROUP_TEMPLATE01": {
+        "id": "DLP_SENSITIVITY_GROUP_TEMPLATE01",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      },
+      "DLP_SENSITIVITY_GROUP_TEMPLATE02": {
+        "id": "DLP_SENSITIVITY_GROUP_TEMPLATE02",
+        "result": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "dlp_sensitivity_group_template": {
+      "dlp_sensitivity_group_template_ref01": {
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/dlp/sensitivity_groups/templates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/sensitivity_groups/templates/{template_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

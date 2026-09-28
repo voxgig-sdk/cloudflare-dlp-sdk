@@ -1,0 +1,26 @@
+# BasicPostureApiPaginatedContentAssetListFlow
+
+main: kit: flow: BasicPostureApiPaginatedContentAssetListFlow:
+{
+  entity: "posture_api_paginated_content_asset_list",
+  kind: "basic",
+  name: "BasicPostureApiPaginatedContentAssetListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "posture_api_paginated_content_asset_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPostureApiPaginatedContentAssetListFlow"
+}

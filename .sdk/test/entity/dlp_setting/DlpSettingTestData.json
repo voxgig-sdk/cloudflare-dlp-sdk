@@ -1,0 +1,98 @@
+{
+  "existing": {
+    "dlp_setting": {
+      "DLP_SETTING00": {
+        "ai_context_analysis": true,
+        "masking_level": "s51",
+        "max_match_bytes": 82,
+        "ocr": false,
+        "payload_logging": "s54",
+        "public_key": "s55",
+        "regex": "s56",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "DLP_SETTING00"
+      },
+      "DLP_SETTING01": {
+        "ai_context_analysis": true,
+        "masking_level": "sa1",
+        "max_match_bytes": 162,
+        "ocr": false,
+        "payload_logging": "sa4",
+        "public_key": "sa5",
+        "regex": "sa6",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "DLP_SETTING01"
+      },
+      "DLP_SETTING02": {
+        "ai_context_analysis": true,
+        "masking_level": "sf1",
+        "max_match_bytes": 242,
+        "ocr": false,
+        "payload_logging": "sf4",
+        "public_key": "sf5",
+        "regex": "sf6",
+        "result": {},
+        "account_id": "ACCOUNT01",
+        "id": "DLP_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "dlp_setting": {
+      "dlp_setting_ref01": {
+        "ai_context_analysis": true,
+        "masking_level": "s141",
+        "max_match_bytes": 322,
+        "ocr": false,
+        "payload_logging": "s144",
+        "public_key": "s145",
+        "regex": "s146",
+        "result": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/dlp/patterns/validate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/limits": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/payload_log": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/dlp/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/dlp/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/dlp/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/payload_log": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/dlp/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

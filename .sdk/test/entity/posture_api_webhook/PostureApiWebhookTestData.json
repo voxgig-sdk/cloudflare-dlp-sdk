@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "posture_api_webhook": {
+      "POSTURE_API_WEBHOOK00": {
+        "errors": [],
+        "id": "POSTURE_API_WEBHOOK00",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "webhook_id": "WEBHOOK01"
+      },
+      "POSTURE_API_WEBHOOK01": {
+        "errors": [],
+        "id": "POSTURE_API_WEBHOOK01",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "webhook_id": "WEBHOOK01"
+      },
+      "POSTURE_API_WEBHOOK02": {
+        "errors": [],
+        "id": "POSTURE_API_WEBHOOK02",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "webhook_id": "WEBHOOK01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_webhook": {
+      "posture_api_webhook_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/webhooks/{webhook_id}/evaluate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/data-security/posture/webhooks/{webhook_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

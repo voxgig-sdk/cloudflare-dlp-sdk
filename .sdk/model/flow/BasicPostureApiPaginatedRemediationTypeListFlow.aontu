@@ -1,0 +1,27 @@
+# BasicPostureApiPaginatedRemediationTypeListFlow
+
+main: kit: flow: BasicPostureApiPaginatedRemediationTypeListFlow:
+{
+  entity: "posture_api_paginated_remediation_type_list",
+  kind: "basic",
+  name: "BasicPostureApiPaginatedRemediationTypeListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01",
+        finding_type_id: "finding_type01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "posture_api_paginated_remediation_type_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPostureApiPaginatedRemediationTypeListFlow"
+}

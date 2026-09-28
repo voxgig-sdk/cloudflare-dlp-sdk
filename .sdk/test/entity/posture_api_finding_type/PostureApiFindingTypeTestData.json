@@ -1,0 +1,47 @@
+{
+  "existing": {
+    "posture_api_finding_type": {
+      "POSTURE_API_FINDING_TYPE00": {
+        "errors": [],
+        "id": "POSTURE_API_FINDING_TYPE00",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_FINDING_TYPE01": {
+        "errors": [],
+        "id": "POSTURE_API_FINDING_TYPE01",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      },
+      "POSTURE_API_FINDING_TYPE02": {
+        "errors": [],
+        "id": "POSTURE_API_FINDING_TYPE02",
+        "messages": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_finding_type": {
+      "posture_api_finding_type_ref01": {
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/data-security/posture/finding_types/{finding_type_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

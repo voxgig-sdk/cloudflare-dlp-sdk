@@ -1,0 +1,70 @@
+{
+  "existing": {
+    "webhook": {
+      "WEBHOOK00": {
+        "authentication_type": "s46",
+        "destination_url": "s47",
+        "headers": [],
+        "id": "WEBHOOK00",
+        "label": "s4a",
+        "signing_secret": "s4b",
+        "status": "s4c",
+        "account_id": "ACCOUNT01"
+      },
+      "WEBHOOK01": {
+        "authentication_type": "s8c",
+        "destination_url": "s8d",
+        "headers": [],
+        "id": "WEBHOOK01",
+        "label": "s90",
+        "signing_secret": "s91",
+        "status": "s92",
+        "account_id": "ACCOUNT01"
+      },
+      "WEBHOOK02": {
+        "authentication_type": "sd2",
+        "destination_url": "sd3",
+        "headers": [],
+        "id": "WEBHOOK02",
+        "label": "sd6",
+        "signing_secret": "sd7",
+        "status": "sd8",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "webhook": {
+      "webhook_ref01": {
+        "authentication_type": "s118",
+        "destination_url": "s119",
+        "headers": [],
+        "label": "s11c",
+        "signing_secret": "s11d",
+        "status": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/webhooks": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/webhooks/evaluate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/data-security/posture/webhooks/{webhook_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/data-security/posture/webhooks/{webhook_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

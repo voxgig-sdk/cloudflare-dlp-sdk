@@ -1,0 +1,70 @@
+<?php
+declare(strict_types=1);
+
+// CloudflareDlp SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+CloudflareDlpUtility::setRegistrar(function (CloudflareDlpUtility $u): void {
+    $u->clean = [CloudflareDlpClean::class, 'call'];
+    $u->done = [CloudflareDlpDone::class, 'call'];
+    $u->make_error = [CloudflareDlpMakeError::class, 'call'];
+    $u->feature_add = [CloudflareDlpFeatureAdd::class, 'call'];
+    $u->feature_hook = [CloudflareDlpFeatureHook::class, 'call'];
+    $u->feature_init = [CloudflareDlpFeatureInit::class, 'call'];
+    $u->fetcher = [CloudflareDlpFetcher::class, 'call'];
+    $u->make_fetch_def = [CloudflareDlpMakeFetchDef::class, 'call'];
+    $u->make_context = [CloudflareDlpMakeContext::class, 'call'];
+    $u->make_options = [CloudflareDlpMakeOptions::class, 'call'];
+    $u->make_request = [CloudflareDlpMakeRequest::class, 'call'];
+    $u->make_response = [CloudflareDlpMakeResponse::class, 'call'];
+    $u->make_result = [CloudflareDlpMakeResult::class, 'call'];
+    $u->make_point = [CloudflareDlpMakePoint::class, 'call'];
+    $u->make_spec = [CloudflareDlpMakeSpec::class, 'call'];
+    $u->make_url = [CloudflareDlpMakeUrl::class, 'call'];
+    $u->param = [CloudflareDlpParam::class, 'call'];
+    $u->prepare_auth = [CloudflareDlpPrepareAuth::class, 'call'];
+    $u->prepare_body = [CloudflareDlpPrepareBody::class, 'call'];
+    $u->prepare_headers = [CloudflareDlpPrepareHeaders::class, 'call'];
+    $u->prepare_method = [CloudflareDlpPrepareMethod::class, 'call'];
+    $u->prepare_params = [CloudflareDlpPrepareParams::class, 'call'];
+    $u->prepare_path = [CloudflareDlpPreparePath::class, 'call'];
+    $u->prepare_query = [CloudflareDlpPrepareQuery::class, 'call'];
+    $u->graphql_body = [CloudflareDlpGraphql::class, 'body'];
+    $u->graphql_errors = [CloudflareDlpGraphql::class, 'errors'];
+    $u->result_basic = [CloudflareDlpResultBasic::class, 'call'];
+    $u->result_body = [CloudflareDlpResultBody::class, 'call'];
+    $u->result_headers = [CloudflareDlpResultHeaders::class, 'call'];
+    $u->transform_request = [CloudflareDlpTransformRequest::class, 'call'];
+    $u->transform_response = [CloudflareDlpTransformResponse::class, 'call'];
+});

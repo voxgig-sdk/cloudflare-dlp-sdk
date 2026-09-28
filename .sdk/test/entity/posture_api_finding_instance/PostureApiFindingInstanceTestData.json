@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "posture_api_finding_instance": {
+      "POSTURE_API_FINDING_INSTANCE00": {
+        "check_instances": [],
+        "errors": [],
+        "id": "POSTURE_API_FINDING_INSTANCE00",
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_FINDING_INSTANCE01": {
+        "check_instances": [],
+        "errors": [],
+        "id": "POSTURE_API_FINDING_INSTANCE01",
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      },
+      "POSTURE_API_FINDING_INSTANCE02": {
+        "check_instances": [],
+        "errors": [],
+        "id": "POSTURE_API_FINDING_INSTANCE02",
+        "messages": [],
+        "result": {},
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "finding_id": "FINDING01"
+      }
+    }
+  },
+  "new": {
+    "posture_api_finding_instance": {
+      "posture_api_finding_instance_ref01": {
+        "check_instances": [],
+        "errors": [],
+        "messages": [],
+        "result": {},
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/archive": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/unarchive": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/data-security/posture/findings/{finding_id}/instances/{instance_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

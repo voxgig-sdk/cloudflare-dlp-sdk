@@ -1,0 +1,22 @@
+# BasicPostureApiCreateRemediationJobFlow
+
+main: kit: flow: BasicPostureApiCreateRemediationJobFlow:
+{
+  entity: "posture_api_create_remediation_job",
+  kind: "basic",
+  name: "BasicPostureApiCreateRemediationJobFlow",
+  step: [
+    {
+      i: {
+        ref: "posture_api_create_remediation_job_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicPostureApiCreateRemediationJobFlow"
+}
